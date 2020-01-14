@@ -307,14 +307,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>3.5k字</p>
+        <p>5.5k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>13分</p>
+        <p>21分</p>
       </a>
     </div>
   
@@ -327,10 +327,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T15:56:39+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-15T00:23:15+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月14日</p>
+    <p>更新于 2020年1月15日</p>
   </a>
 </div>
 
@@ -624,7 +624,7 @@
 
 <ul>
 <li><p><strong>一个使用包机制的示例</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义了一个子包的类</span></span><br><span class="line"><span class="keyword">package</span> com.ccatom.child;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello Package"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个子包的类</span></span><br><span class="line"><span class="keyword">package</span> com.ccatom.child;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello Package"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">父包类要用子包类，因此先编译子包源文件：javac -d . B.java</span><br><span class="line">发现在以下目录出现了class文件：当前目录\com\ccatom\child\B.class</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//再定义一个使用子包类的父包类</span></span><br><span class="line"><span class="keyword">package</span> com.ccatom;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//使用完整的名称来使用子类包</span></span><br><span class="line">        com.ccatom.child.B obj = <span class="keyword">new</span> com.ccatom.child.B();</span><br><span class="line">        obj.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">编译父包类源文件：javac -d . A.java</span><br><span class="line">发现在以下目录出现了class文件：当前目录\com\ccatom\A.class</span><br></pre></td></tr></table></figure>
@@ -638,9 +638,145 @@
 <p>使用import直接导入类B，简化之后：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ccatom;</span><br><span class="line"><span class="keyword">import</span> com.ccatom.child.B;<span class="comment">//import导入子包类B</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        B obj = <span class="keyword">new</span> B(); <span class="comment">//简化了此处的操作</span></span><br><span class="line">        obj.show();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>如果想导入某个包下所有的类，则可以这样写：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.ccatom.*; <span class="comment">//导入了com.ccatom包下的所有的类</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.ccatom.*; <span class="comment">//导入了com.ccatom包下的所有的类</span></span><br></pre></td></tr></table></figure>
+<p>JDK 1.5以后可以进行“静态导入”，用来导入指定类的某个静态成员变量或方法。<br>如，导入com.ccatom包中类A的静态方法fun() ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.ccatom.A.fun;</span><br></pre></td></tr></table></figure>
+<p>也可以导入类A中所有的静态成员：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.ccatom.A.*;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.import语句应该出现在package语句之后、类定义之前。<br>2.Java默认为所有源文件导入java.lang包下所有的类，因此可以直接使用String和System类。<br>使用import可以省略包名；而使用import static则可以连类名都省略。</p>
+</blockquote>
+</li>
+<li><p><strong>Java常用包</strong></p>
+</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>包</th>
+<th>含有</th>
+<th>例如</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>java.lang</td>
+<td>核心类（无需导入）</td>
+<td>String、Math、System、Thread</td>
+</tr>
+<tr>
+<td>java.util</td>
+<td>工具类/接口和集合框架类/接口</td>
+<td>Arrays、List、Set</td>
+</tr>
+<tr>
+<td>java.net</td>
+<td>网络编程相关</td>
+<td>-</td>
+</tr>
+<tr>
+<td>java.text</td>
+<td>输入输出的类/接口</td>
+<td>-</td>
+</tr>
+<tr>
+<td>java.sql</td>
+<td>JDBC数据库编程的相关类/接口</td>
+<td>-</td>
+</tr>
+<tr>
+<td>java.awt</td>
+<td>抽象窗口工具集，用于构建GUI</td>
+<td>-</td>
+</tr>
+<tr>
+<td>java.swing</td>
+<td>Swing GUI编程的相关类</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Java构造器</strong><br>类似于C++中的构造函数<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="comment">//一个简单的构造器，用来初始化name和age</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Test obj = <span class="keyword">new</span> Test(<span class="string">"MJT"</span>,<span class="number">20</span>);</span><br><span class="line">        System.out.println(obj.name+<span class="string">" "</span>+obj.age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>不能说Java对象完全由构造器负责创建</strong>：在调用构造器之前，系统就已经为对象分配内存空间，并为这个对象执行默认初始化，这个对象就已经产生了。只是这个对象不能被外部访问，只能通过内部构造器的this来引用。</p>
+</blockquote>
+</li>
+</ul>
+<p>同时，上述代码自定义了一个有参的构造器，这时就不能再用new Test();来创建实例，因为类中没有无参构造器。因此需要进行<strong>构造器重载</strong>（同一个类里具有多个构造器，各构造器的形参列表不同）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//上述类中重载一个无参的构造器</span></span><br><span class="line"><span class="comment">//就可以用new Test();来创建实例了</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>同一个类的构造器之间的调用</strong></li>
+</ul>
+<p>一种方法是在构造器中用new关键字来调用另一个构造器，但会重新创建一个对象，占用资源。<br>因此，对于含有包含关系的构造器来讲，就要<strong>用this调用另一个重载的构造器</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(name);<span class="comment">//用this调用重载的构造器</span></span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里需要注意的是：</p>
+<ol>
+<li>使用this调用另一个重载的构造器<strong>只能在构造器中使用</strong>；</li>
+<li>必须作为构造器执行体的<strong>第一行语句</strong>；</li>
+</ol>
+<ul>
+<li><strong>类的继承</strong></li>
+</ul>
+<p>比如B类以public方式继承A类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> B extends A&#123;......&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的一些小知识：</p>
+<ol>
+<li>Java摒弃了多继承特征，<strong>Java类只能有一个直接父类</strong>；</li>
+<li>为显式指定父类，则默认父类java.lang.Object,java。因此，<strong>java.lang.Object类是所有类的父类</strong>；</li>
+<li>构造器不能被继承；</li>
+<li>从子类角度看，子类扩展（extends）了父类；</li>
+<li>从父类角度看，父类派生（derive）出了子类；</li>
+</ol>
+<ul>
+<li><strong>重写父类的方法</strong></li>
+</ul>
+<p>方法重写（override）：子类包含父类同名方法的现象。又称方法覆盖</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"A_fun"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//重写父类A中的方法fun</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"B_fun"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        B obj = <span class="keyword">new</span> B();</span><br><span class="line">        obj.fun();<span class="comment">//输出B_fun</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>静态方法与非静态方法不能互相重写</p>
+</blockquote>
+<p>如果父类中有一个private方法，则在子类中定义一个同名方法不构成重写，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//父类中的方法定义为private</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//这里可以用static限定，因为不属于重写。</span></span><br><span class="line">    <span class="comment">//所定义的fun是子类的新方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><strong>super限定</strong></li>
+</ul>
+<p>如果需要在子类中调用父类中被重写的方法，可以用super限定作为主调来调用被覆盖的方法。比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show_a_in_A</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//在子类方法中用super来调用父类的实例变量a</span></span><br><span class="line">        System.out.println(<span class="keyword">super</span>.a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//尽管父类的a被子类的a覆盖</span></span><br><span class="line">        <span class="comment">//但是new B();的时候依然会为父类中的a开辟一块内存</span></span><br><span class="line">        B obj = <span class="keyword">new</span> B();</span><br><span class="line">        obj.show_a_in_A();<span class="comment">//输出1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的小知识：</p>
+<ol>
+<li>可以将super与this相似看待，<strong>super不能出现在static修饰的方法中</strong>；</li>
+<li>并不是完全覆盖，系统在创建子类对象时，依然会为父类中定义的、被隐藏的变量分配内存空间；</li>
+</ol>
+<ul>
+<li><strong>重载（overload）与重写（override）</strong></li>
+</ul>
+<p>重载：发生在同一个类的多个同名方法之前。<br>重写：发生在子类和父类的同名方法之间。</p>
+<blockquote>
+<p>也有例外：如果子类中定义一个与父类方法有相同的方法名，但参数列表不同的方法，就会形成父类方法和子类方法的重载。</p>
+</blockquote>
+<ul>
+<li><strong>子类调用父类的构造器</strong><br>同一个类，在一个构造器中调用另一个构造器使用this调用来完成。<br>类似的，在子类构造器中调用父类的构造器用super调用来完成。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">(String n)</span></span>&#123;</span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">(String n,<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        <span class="comment">//使用super限定来调用父类的构造器</span></span><br><span class="line">        <span class="keyword">super</span>(n)</span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        B obj = <span class="keyword">new</span> B(<span class="string">"MJT"</span>,<span class="number">20</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+需要注意的小知识：</li>
+</ul>
+<ol>
+<li>super调用父类构造器时也必须出现在构造器执行体的<strong>第一行</strong>（因此this调用与super调用不会同时出现）</li>
+<li>当调用子类构造器来初始化子类对象时，父类构造器总会在子类构造器之前执行。</li>
+<li>super调用不能用在static方法内（构造器不属于类，也不可能用static修饰）</li>
+</ol>
+<ul>
+<li><strong>多态</strong></li>
+</ul>
+<p>多态：相同类型的变量，调用同一个方法时呈现出多种不同的行为特征的现象。<br>编译时类型：由声明变量的类型决定，如 String s ,那么String就是编译时类型。<br>运行时类型：由实际赋给该变量的对象决定，如var s =  new String()； ，那么String就是运行时类型。</p>
+<p><strong>如果编译时类型和运行时类型不一致，就可能出现多态</strong><br>类似的形式： 编译时类型 变量名 = new 运行时类型();</p>
+<p>这种类型的多态分为两种情况：</p>
+<p>首先是重写成员的情况：<br>先上结论：<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200115001119.png" alt=""></p>
+<blockquote>
+<p>解释一下图表：变量名.重写方法(); 调用的是执行运行时类型的方法，也就相当于<br>变量名.执行运行时类型的方法();</p>
+</blockquote>
+<p>以代码为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="comment">//这里的num与show对应图表中的“重写实例变量”与“重写方法”</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Father_show_override"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="comment">//子类中重写num实例变量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> num = <span class="number">3</span>;</span><br><span class="line">    <span class="comment">//子类中重写show方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Child_show_override"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">final</span> String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Father obj = <span class="keyword">new</span> Child();</span><br><span class="line"></span><br><span class="line">        obj.show();<span class="comment">//调用重写的show方法</span></span><br><span class="line">        System.out.println(obj.num);<span class="comment">//输出重写的num实例变量</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后是特有成员的情况（子类有，父类没有 或 父类有子类没有）<br>结论：<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200115002052.png" alt=""><br>代码为例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="comment">//父类中特有的实例变量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> father_num = <span class="number">2</span>;</span><br><span class="line">    <span class="comment">//父类中特有的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">father_fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Father_fun"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="comment">//子类中特有的实例变量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> child_num = <span class="number">4</span>;</span><br><span class="line">    <span class="comment">//子类中特有的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">child_fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Child_fun"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">final</span> String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Father obj = <span class="keyword">new</span> Child();</span><br><span class="line"></span><br><span class="line">        obj.father_fun();<span class="comment">//调用父类中特有的方法</span></span><br><span class="line">        System.out.println(obj.father_num);<span class="comment">//输出父类中特有的实例变量</span></span><br><span class="line"></span><br><span class="line">        obj.child_fun();<span class="comment">//调用子类中特有的方法，报错</span></span><br><span class="line">        System.out.println(obj.child_num);<span class="comment">//输出子类中特有的实例变量，报错</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       </div>
       
       
@@ -652,10 +788,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T15:56:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-15T00:23:15+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月14日</p>
+    <p>更新于 2020年1月15日</p>
   </a>
 </div>
 
