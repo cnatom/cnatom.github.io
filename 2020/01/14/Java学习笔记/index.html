@@ -249,7 +249,7 @@
         
   
     <h1 class="title">
-      <a href="/2020/01/09/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      <a href="/2020/01/14/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         《疯狂Java讲义》学习笔记
       </a>
     </h1>
@@ -281,7 +281,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-09</p>
+    <p>2020-01-14</p>
   </a>
 </div>
 
@@ -307,14 +307,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>1.7k字</p>
+        <p>2.9k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>6分</p>
+        <p>11分</p>
       </a>
     </div>
   
@@ -327,7 +327,7 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T12:48:46+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T15:06:04+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月14日</p>
@@ -485,6 +485,126 @@
 </li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200114124449.png" alt=""></p>
+<ul>
+<li><strong>二维数组</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动态初始化方式</span></span><br><span class="line"><span class="keyword">int</span>[][] arr;</span><br><span class="line">arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][];</span><br><span class="line"><span class="comment">//静态初始化方式</span></span><br><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[][] &#123;<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>],<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200114130915.png" alt=""><blockquote>
+<p>这个二维数组实际上完全可以看作是一维数组：使用new int[4]初始化一维数组后，相当于定义了4个int类型的变量；<br>类似的，使用new int[4][]初始化这个数组后，相当于<strong>定义了4个int[]类型的变量</strong>，这些int[]类型的变量都是数组类型，因此必须再次初始化这些数组。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="第-5-章-面向对象（上）"><a href="#第-5-章-面向对象（上）" class="headerlink" title="第 5 章 面向对象（上）"></a>第 5 章 面向对象（上）</h1><ul>
+<li><strong>为什么静态成员（类成员）不能直接访问非静态成员（对象成员）？</strong></li>
+</ul>
+<p>先了解几个书中的基本概念</p>
+<p>主调：调用成员变量、方法的对象称为主调。如：主调.方法();</p>
+<p>基本概念（1）：如果调用static修饰的成员时忽略了主调，那么默认使用该类作为主调。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在调用static方法时下列两种形式相同。</span></span><br><span class="line">static_fun();</span><br><span class="line">ClassName.static_fun();</span><br></pre></td></tr></table></figure>
+
+<p>基本概念（2）：如果调用没有static修饰的成员时忽略了主调，那么默认使用this作为主调。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用普通成员时下列两种形式相同。</span></span><br><span class="line">fun();</span><br><span class="line"><span class="keyword">this</span>.fun();</span><br></pre></td></tr></table></figure>
+<p>基本概念（3）：this指向本类的实例，而static成员是属于类的，因此static成员内不能使用this。</p>
+<p>如果在静态成员中调用普通成员，会发生什么？ 举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">===============运行结果=================</span><br><span class="line">错误: 无法从静态上下文中引用非静态 方法 show()</span><br></pre></td></tr></table></figure>
+<p>这对应基本概念（2），这里调用的是一个普通成员函数show，则默认使用this作为主调。<br>这里相当于this.show();<br>但show()只能通过对象来访问，而static方法是属于类的，在static内的this不知道该指向哪一个实例，因此show()无法在main方法中被调用。</p>
+<p>如果确实想在static方法中调用非static方法，可以临时创建一个对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//创建一个临时对象来调用临时对象中的show方法。</span></span><br><span class="line">        <span class="keyword">new</span> test().show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>方法的参数传递机制</strong></li>
+</ul>
+<p>Java参数的传递机制只有一种：值传递</p>
+<p>对于引用类型的参数传递，一样采用的是值传递方式。但是这里的“值”，是地址值。比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Data</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> num2=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(Data p)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = p.num1;</span><br><span class="line">        p.num1 = p.num2;</span><br><span class="line">        p.num2 = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Data a; <span class="comment">//定义一个Data类型的引用</span></span><br><span class="line">        a = <span class="keyword">new</span> Data(); <span class="comment">//a引用指向一块用new新开辟的一块Data内存空间。</span></span><br><span class="line">        swap(a); <span class="comment">//值传递，p接受a的地址值，使得p与a存储着相同的地址值。</span></span><br><span class="line">        System.out.println(a.num1 + <span class="string">" "</span> + a.num2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200114140422.png" alt=""></p>
+<ul>
+<li><p><strong>形参个数可变的方法</strong><br>方法：在最后一个形参类型后加三个点 (Typename… name)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> num,String... books)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (String string : books) &#123;</span><br><span class="line">            System.out.println(string);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//可直接罗列参数</span></span><br><span class="line">        fun(<span class="number">3</span>,<span class="string">"Java"</span>,<span class="string">"C++"</span>,<span class="string">"Python"</span>);</span><br><span class="line">        <span class="comment">//也可将String...看做String[]，传递一个数组进去。</span></span><br><span class="line">        fun(<span class="number">3</span>,<span class="keyword">new</span> String[] &#123;<span class="string">"Java"</span>,<span class="string">"C++"</span>,<span class="string">"Python"</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>必须将Typename…形参放在在最后一个位置，否则会报错。</p>
+</blockquote>
+</li>
+<li><p><strong>成员变量和局部变量</strong><br>成员变量：在类内定义的变量。无需显式初始化，系统自动初始化。<br>局部变量：在方法内定义的变量。需要显式初始化。<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200114143342.png" alt=""></p>
+</li>
+<li><p><strong>成员变量的初始化和内存中的运行机制</strong></p>
+</li>
+</ul>
+<p>当系统加载类或创建该类的实例时，系统会自动为成员变量分配内存空间。</p>
+<p>举个栗子：<br>比如说我们有一个类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> eyeNum;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1）如果在主函数中第一次加载这个类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200114144636.png" alt=""></p>
+<blockquote>
+<p>会初始化Person类，只初始化静态变量（类变量）↑</p>
+</blockquote>
+<p>2）然后创建一个Person类型的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200114145016.png" alt=""></p>
+<blockquote>
+<p>创建一个Person对象时并不需要为eyeName类变量分配内存<br>系统只为name实例变量分配了内存空间</p>
+</blockquote>
+<p>3）再创建第二个Person类对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person();</span><br><span class="line">p2.name = <span class="string">"张三"</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200114145529.png" alt=""></p>
+<blockquote>
+<p>系统只为第二个对象的对象成员分配了内存空间</p>
+</blockquote>
+<ul>
+<li><strong>局部变量的初始化和内存中的运行机制</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a; <span class="comment">//系统并未分配空间</span></span><br><span class="line">a = <span class="number">1</span>; <span class="comment">//赋值时才分配空间</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol>
+<li>局部变量不属于任何类或实例，因此它总是保存在其<strong>所在方法的栈内存中</strong></li>
+<li>因为局部变量只保存基本类型的值或者对象的引用，因此<strong>局部变量所占的内存区通常比较小</strong></li>
+</ol>
+<ul>
+<li><strong>访问控制符</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">private</th>
+<th align="center">default</th>
+<th align="center">protected</th>
+<th align="center">public</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">同一个类中</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">同一个包中</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">子类中</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">全局范围内</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>局部变量不能用用访问控制符修饰</p>
+</blockquote>
+<ul>
+<li><strong>工具方法</strong><br>只用于辅助该类的其他方法的方法。也应该用private修饰</li>
+</ul>
 
       </div>
       
@@ -497,7 +617,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T12:48:46+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T15:06:04+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月14日</p>
@@ -519,7 +639,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/01/09/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=《疯狂Java讲义》学习笔记 | 阿腾木的小世界&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/01/14/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=《疯狂Java讲义》学习笔记 | 阿腾木的小世界&summary="
           
           >
           
@@ -531,7 +651,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/01/09/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=《疯狂Java讲义》学习笔记 | 阿腾木的小世界&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/01/14/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=《疯狂Java讲义》学习笔记 | 阿腾木的小世界&summary="
           
           >
           
@@ -543,7 +663,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/01/09/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=《疯狂Java讲义》学习笔记 | 阿腾木的小世界&summary="
+          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/01/14/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=《疯狂Java讲义》学习笔记 | 阿腾木的小世界&summary="
           
           >
           
@@ -777,7 +897,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第-1-章-Java语言概述与开发环境"><span class="toc-text">第 1 章 Java语言概述与开发环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第-3-章-数据类型和运算符"><span class="toc-text">第 3 章 数据类型和运算符</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第-1-章-Java语言概述与开发环境"><span class="toc-text">第 1 章 Java语言概述与开发环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第-3-章-数据类型和运算符"><span class="toc-text">第 3 章 数据类型和运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第-5-章-面向对象（上）"><span class="toc-text">第 5 章 面向对象（上）</span></a></li></ol>
     </div>
   </section>
 
@@ -1029,14 +1149,14 @@ setInterval("createtime()",250);
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://cdn.jsdelivr.net/gh/cnatom/images/images/background.jpg 默认背景"],
+          ["https://cdn.jsdelivr.net/gh/cnatom/images/images/background.jpg"],
           {
             duration: "0",
             fade: "0"
           });
         } else {
           $.backstretch(
-          ["https://cdn.jsdelivr.net/gh/cnatom/images/images/background.jpg 默认背景"],
+          ["https://cdn.jsdelivr.net/gh/cnatom/images/images/background.jpg"],
           {
             duration: "0",
             fade: "0"
