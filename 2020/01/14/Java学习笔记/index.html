@@ -307,14 +307,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>2.9k字</p>
+        <p>3.5k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>11分</p>
+        <p>13分</p>
       </a>
     </div>
   
@@ -327,7 +327,7 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T15:06:04+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T15:52:58+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月14日</p>
@@ -603,7 +603,42 @@
 <p>局部变量不能用用访问控制符修饰</p>
 </blockquote>
 <ul>
-<li><strong>工具方法</strong><br>只用于辅助该类的其他方法的方法。也应该用private修饰</li>
+<li><p><strong>工具方法</strong><br>只用于辅助该类的其他方法的方法。也应该用private修饰</p>
+</li>
+<li><p><strong>package包机制</strong></p>
+</li>
+</ul>
+<p>几个知识点</p>
+<ol>
+<li>包机制用于解决类的重名冲突，类文件的管理。</li>
+<li>按照规范，包名最好小写字母。</li>
+<li>应该使用域名的倒写，如com.ccatom包。</li>
+<li>package语句必须作为源文件的第一条非注释语句。</li>
+<li>一个源文件只能指定一个包</li>
+<li>同一个包下的类可以直接访问</li>
+<li>通常建议将class文件与java源文件分开放。</li>
+</ol>
+<p>特别注意的是：父包内的类使用子包中的类，必须写类的完整包路径加类名。</p>
+<p>比如com.ccatom包下有一个类A，com.ccatom.child包下有一个类B。<br>类A使用类B必须要有com.ccatom.child.B，就像以下形式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.ccatom.child.B obj = <span class="keyword">new</span> com.ccatom.child.B();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>一个使用包机制的示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义了一个子包的类</span></span><br><span class="line"><span class="keyword">package</span> com.ccatom.child;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello Package"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">父包类要用子包类，因此先编译子包源文件：javac -d . B.java</span><br><span class="line">发现在以下目录出现了class文件：当前目录\com\ccatom\child\B.class</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//再定义一个使用子包类的父包类</span></span><br><span class="line"><span class="keyword">package</span> com.ccatom;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//使用完整的名称来使用子类包</span></span><br><span class="line">        com.ccatom.child.B obj = <span class="keyword">new</span> com.ccatom.child.B();</span><br><span class="line">        obj.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">编译父包类源文件：javac -d . A.java</span><br><span class="line">发现在以下目录出现了class文件：当前目录\com\ccatom\A.class</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行父类包：java com.ccatom.A</span><br><span class="line">输出Hello Package</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果编译Java文件时不使用-d选项，编译器不会为Java源文件生成相应的文件结构。</p>
+</blockquote>
+</li>
+<li><p><strong>import关键字</strong><br>import关键字用来简化上述源代码，简化以前：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ccatom;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        com.ccatom.child.B obj = <span class="keyword">new</span> com.ccatom.child.B();</span><br><span class="line">        obj.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用import直接导入类B，简化之后：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ccatom;</span><br><span class="line"><span class="keyword">import</span> com.ccatom.child.B;<span class="comment">//import导入子包类B</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        B obj = <span class="keyword">new</span> B(); <span class="comment">//简化了此处的操作</span></span><br><span class="line">        obj.show();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>如果想导入某个包下所有的类，则可以这样写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.ccatom.*; <span class="comment">//导入了com.ccatom包下的所有的类</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       </div>
@@ -617,7 +652,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T15:06:04+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T15:52:58+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月14日</p>
