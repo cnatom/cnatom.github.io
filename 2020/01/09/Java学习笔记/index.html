@@ -307,14 +307,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>906字</p>
+        <p>1.7k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>3分</p>
+        <p>6分</p>
       </a>
     </div>
   
@@ -327,7 +327,7 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T10:32:05+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T12:48:46+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月14日</p>
@@ -372,6 +372,119 @@
 <li>整个算数表达式的数据类型自动提升到与表达式中最高等级操作数相同的类型</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b = <span class="number">40</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">23</span>;</span><br><span class="line"><span class="keyword">var</span> d = .<span class="number">314</span>;</span><br><span class="line"><span class="keyword">double</span> ans = b + c + i * d;</span><br><span class="line">System.out.print(ans);<span class="comment">//输出7</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>直接量</strong><br>是指在程序中通过源代码直接给出的值。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>; <span class="comment">//1是直接量</span></span><br><span class="line"><span class="keyword">double</span> b = <span class="number">2.0</span>; <span class="comment">//2.0是直接量</span></span><br><span class="line">String name = <span class="string">"MJT"</span>; <span class="comment">//"MJT"是直接量</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>String类的直接量不能赋给其他类型的变量。<br>null类型的直接量可以直接赋给任何引用类型的变量，包括String类型。<br>boolean类型的直接量只能赋给boolean类型的变量，不能赋给其他任何类型的变量。</p>
+</blockquote>
+</li>
+<li><strong>常量池</strong><br>指的是在编译器被确定，并保存在已编译的.class文件中的一些数据。<br>包括关于类、方法、接口中的常量，也包括字符串中的直接量。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下面的"hello"都在常量池中储存</span></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="string">"hello"</span>; </span><br><span class="line"><span class="keyword">var</span> s2 = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">var</span> s3 = <span class="string">"he"</span> + <span class="string">"llo"</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Java确保每个字符串常量只有一个，不会产生多个副本。<br>因此，上面那三个”hello”在常量池中是同一块数据。</p>
+</blockquote>
+</li>
+<li><strong>位运算</strong><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">名称</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;</td>
+<td align="center">按位与</td>
+<td>同时为1时返回1</td>
+</tr>
+<tr>
+<td align="center">&#124;</td>
+<td align="center">按位或</td>
+<td>只要有一位为1则返回1</td>
+</tr>
+<tr>
+<td align="center">~</td>
+<td align="center">按位非</td>
+<td>单目运算符，用来取反。</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">按位异或</td>
+<td>当两位相同时返回0，不同时返回1</td>
+</tr>
+<tr>
+<td align="center">&lt;&lt;</td>
+<td align="center">左移运算符</td>
+<td>右侧补0。左侧超出截断</td>
+</tr>
+<tr>
+<td align="center">&gt;&gt;</td>
+<td align="center">右移运算符</td>
+<td>原来是正数，则左边补零;原来是复数，则左边补1。右侧超出截断</td>
+</tr>
+<tr>
+<td align="center">&gt;&gt;&gt;</td>
+<td align="center">无符号右移运算符</td>
+<td>左侧总是补零。右侧超出截断</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>n&gt;&gt;x相当于n乘以2的x次方。<br>n&lt;&lt;x相当于n除以2的x次方。</p>
+</blockquote>
+</li>
+<li><strong>数组类型</strong></li>
+</ul>
+<ol>
+<li>静态初始化 : 显式指定初始值，系统决定数组长度。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种方式</span></span><br><span class="line"><span class="keyword">int</span>[] arr;</span><br><span class="line">arr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="comment">//第二种方式（推荐）</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span>  <span class="keyword">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>动态初始化 : 显式指定长度，系统分配初始值。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种方式</span></span><br><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="comment">//第二种方式（推荐）</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br></pre></td></tr></table></figure></li>
+<li>动态初始化分配规则</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">数组元素类型</th>
+<th align="center">自动分配的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">整数类型</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">浮点类型</td>
+<td align="center">0.0</td>
+</tr>
+<tr>
+<td align="center">字符型(char)</td>
+<td align="center">‘\u0000’</td>
+</tr>
+<tr>
+<td align="center">布尔类型</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">引用类型(类，接口，数组）</td>
+<td align="center">null</td>
+</tr>
+</tbody></table>
+<br>
+
+<ul>
+<li><strong>foreach循环</strong><br>以遍历数组元素为例<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrs = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> arr : arrs) &#123;</span><br><span class="line">    System.out.println(arr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用foreach循环迭代数组元素时，并不能改变数组元素的值，因此不应用foreach的循环变量进行赋值。</p>
+</blockquote>
+</li>
+<li><strong>深入数组</strong><br>Java中“数组元素”和“数组变量（引用变量）”在内存中是分开存放的。举个栗子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] p;<span class="comment">//定义一个局部变量</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的p是一个引用变量，作为局部变量被存储在<strong>栈内存</strong>中。<br>相当于C++中的指针，指向一个int元素的内存。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>实际的数组元素{1,2,3}被存储在被new开辟的一块<strong>堆内存</strong>中，p = new int[] {1,2,3};则让p引用变量指向该堆内存。</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200114124449.png" alt=""></p>
 
       </div>
       
@@ -384,7 +497,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T10:32:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-14T12:48:46+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月14日</p>
@@ -916,14 +1029,14 @@ setInterval("createtime()",250);
       $(function(){
         if ('') {
           $('').backstretch(
-          ["https://cdn.jsdelivr.net/gh/cnatom/images/images/14806968.jpg"],
+          ["https://cdn.jsdelivr.net/gh/cnatom/images/images/background.jpg 默认背景"],
           {
             duration: "0",
             fade: "0"
           });
         } else {
           $.backstretch(
-          ["https://cdn.jsdelivr.net/gh/cnatom/images/images/14806968.jpg"],
+          ["https://cdn.jsdelivr.net/gh/cnatom/images/images/background.jpg 默认背景"],
           {
             duration: "0",
             fade: "0"
