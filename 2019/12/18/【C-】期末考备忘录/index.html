@@ -372,6 +372,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Sample(Sample &amp;S)</span><br><span class="line"><span class="comment">//名称与类名相同，形参为本类的引用对象。</span></span><br></pre></td></tr></table></figure>
 <p>——拷贝构造函数的三种调用情况：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1&amp;2.同类对象的初始化</span></span><br><span class="line"><span class="function">Sample <span class="title">S2</span><span class="params">(S1)</span></span>;</span><br><span class="line">Sample S2 = S1;</span><br><span class="line"><span class="comment">// 3.对象作为函数的参数进行传递</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(A a)</span></span>&#123;a.x = <span class="number">1</span>;&#125;;</span><br><span class="line">A obj; f(obj);<span class="comment">//相当于A a = obj;</span></span><br><span class="line"><span class="comment">// × 赋值不是初始化，未调用拷贝构造函数</span></span><br><span class="line">S2 = S1;</span><br></pre></td></tr></table></figure>
+
 <h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><p>——析构函数不能重载</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~A();  <span class="comment">//析构函数声明</span></span><br><span class="line">A::~A()&#123;&#125;  <span class="comment">//析构函数定义</span></span><br></pre></td></tr></table></figure>
 <p>——析构函数和构造函数的调用顺序相反</p>
@@ -759,7 +760,7 @@
         
           <li><a class="flat-box" title="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/"><div class='name'>备忘录</div><div class='badge'>(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><div class='name'>学习笔记</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><div class='name'>学习笔记</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E8%90%8C%E6%96%B0%E8%87%AA%E5%BC%BA%E4%B9%8B%E8%B7%AF/" href="/categories/%E8%90%8C%E6%96%B0%E8%87%AA%E5%BC%BA%E4%B9%8B%E8%B7%AF/"><div class='name'>萌新自强之路</div><div class='badge'>(6)</div></a></li>
         

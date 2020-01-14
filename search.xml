@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>《疯狂Java讲义》学习笔记</title>
+      <link href="/2020/01/09/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/01/09/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第-1-章-Java语言概述与开发环境"><a href="#第-1-章-Java语言概述与开发环境" class="headerlink" title="第 1 章 Java语言概述与开发环境"></a>第 1 章 Java语言概述与开发环境</h1><ul><li><strong>Java虚拟机(JVM : Java Virtual Machine)</strong><br>java语言里负责解释执行字节码文件，是运行Java字节码文件的虚拟计算机。<br>当使用Java编译器编译Java程序时，生成的是与平台无关的字节码，这些字节码不面向任何具体平台，只面向JVM。<br>不同平台上的JVM都是不同的，但他们都提供了相同的接口。</li><li><strong>Java标准化开发包(JDK : Java SE Development Kit)</strong><br>提供了编译、运行Java程序所需的各种工具和资源（包括Java编译器、Java运行时环境以及常用的Java类库等）</li><li><strong>Java运行时环境(JRE : Java Runtime Enviroment)</strong><br>JRE与JVM的关系：JRE包含JVM，JVM是运行Java程序的核心虚拟机，而运行Java程序不仅需要核心虚拟机，还需要其他的类的加载器、字节码校验器以及基础类库。JRE除包含JVM之外，还包含运行Java程序的其他环境支持。</li><li><strong>计算机如何查找命令？（设置环境变量的原因）</strong><br>Windows根据Path环境变量来查找命令，Path环境变量的值是一系列路径，系统会根据这一系列路径中依次查找命令。如果能找到这个命令，则执行；如果找不到这个命令，就会出现：’xxx’不是内部或外部命令，也不是可运行的程序或批处理文件。</li><li><strong>关于CLASSPATH</strong><br>如果使用1.4以前版本的JDK，需要设置CLASSPATH环境变量的值为<br>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar<br>一旦设置了该环境变量，JRE将会按照该环境变量指定的路径来搜索Java类。<br>点( . )代表当前路径，用以强制Java解释器在当前路径下搜索Java类。</li><li><strong>Java源文件的命名规则</strong><br>如果Java源程序的源代码里定义了一个public类，则该源文件的主文件名必须与public类的类名相同。（因此，一个Java源文件内最多只能有一个public类）<br>如果一个源文件内有3个类，则使用javac命令编译会生成3个.class文件，每一个类对应一个.class文件。</li><li><strong>提高可读性的建议</strong></li></ul><ol><li>一个Java源文件通常只定义一个类，不同的类使用不同的源文件定义。</li><li>让Java源文件的主文件名与该源文件中定义的public类同名。</li></ol><ul><li><strong>垃圾回收（Garbage Collection , GC）</strong><br>JRE回收无用内存的机制。通常JRE会提供一个后台线程来进行检测和控制，一般都是在CPU空闲或内存不足时自动进行垃圾回收。</li><li><strong>Java的堆内存</strong><br>是一个运行时数据区，用以保存类的实例。堆内存中存储着在运行的应用程序所建立的所有对象，这些对象不需要程序通过代码来显式地释放。堆内存的回收由垃圾回收器来负责，所有的JVM实现都有一个由垃圾回收器管理的堆内存。<h1 id="第-3-章-数据类型和运算符"><a href="#第-3-章-数据类型和运算符" class="headerlink" title="第 3 章 数据类型和运算符"></a>第 3 章 数据类型和运算符</h1></li><li><strong>自动提升规则</strong><blockquote><p>byte -&gt; short&amp;char -&gt; int -&gt; long -&gt; float -&gt; double</p></blockquote></li></ul><ol><li>所有的byte、short和char类型都将被提升到int类型。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> value = <span class="number">5</span>;</span><br><span class="line">value = value - <span class="number">2</span>;</span><br><span class="line"><span class="comment">//这里的value-2被自动提升到int类型，int赋给short可能会报错</span></span><br></pre></td></tr></table></figure></li><li>整个算数表达式的数据类型自动提升到与表达式中最高等级操作数相同的类型</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b = <span class="number">40</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">var</span> i = <span class="number">23</span>;</span><br><span class="line"><span class="keyword">var</span> d = .<span class="number">314</span>;</span><br><span class="line"><span class="keyword">double</span> ans = b + c + i * d;</span><br><span class="line">System.out.print(ans);<span class="comment">//输出7</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《中国近现代史纲要》知识点汇总</title>
       <link href="/2019/12/23/%E3%80%8A%E4%B8%AD%E5%9B%BD%E8%BF%91%E7%8E%B0%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81%E3%80%8B%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/"/>
       <url>/2019/12/23/%E3%80%8A%E4%B8%AD%E5%9B%BD%E8%BF%91%E7%8E%B0%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81%E3%80%8B%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/</url>
