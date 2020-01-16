@@ -325,14 +325,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>6.7k字</p>
+        <p>7.9k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>26分</p>
+        <p>31分</p>
       </a>
     </div>
   
@@ -345,7 +345,7 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-16T00:04:36+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-16T15:30:23+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月16日</p>
@@ -364,7 +364,10 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h1 id="第-1-章-Java语言概述与开发环境"><a href="#第-1-章-Java语言概述与开发环境" class="headerlink" title="第 1 章 Java语言概述与开发环境"></a>第 1 章 Java语言概述与开发环境</h1><ul>
+        <blockquote>
+<p>QAQ寒假flag屹立不倒~</p>
+</blockquote>
+<h1 id="第-1-章-Java语言概述与开发环境"><a href="#第-1-章-Java语言概述与开发环境" class="headerlink" title="第 1 章 Java语言概述与开发环境"></a>第 1 章 Java语言概述与开发环境</h1><ul>
 <li><strong>Java虚拟机(JVM : Java Virtual Machine)</strong><br>java语言里负责解释执行字节码文件，是运行Java字节码文件的虚拟计算机。<br>当使用Java编译器编译Java程序时，生成的是与平台无关的字节码，这些字节码不面向任何具体平台，只面向JVM。<br>不同平台上的JVM都是不同的，但他们都提供了相同的接口。</li>
 <li><strong>Java标准化开发包(JDK : Java SE Development Kit)</strong><br>提供了编译、运行Java程序所需的各种工具和资源（包括Java编译器、Java运行时环境以及常用的Java类库等）</li>
 <li><strong>Java运行时环境(JRE : Java Runtime Enviroment)</strong><br>JRE与JVM的关系：JRE包含JVM，JVM是运行Java程序的核心虚拟机，而运行Java程序不仅需要核心虚拟机，还需要其他的类的加载器、字节码校验器以及基础类库。JRE除包含JVM之外，还包含运行Java程序的其他环境支持。</li>
@@ -788,6 +791,91 @@
 </ul>
 <h3 id="【重点】实例初始化快、类初始化快、构造器的执行顺序"><a href="#【重点】实例初始化快、类初始化快、构造器的执行顺序" class="headerlink" title="【重点】实例初始化快、类初始化快、构造器的执行顺序"></a>【重点】实例初始化快、类初始化快、构造器的执行顺序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"父类类初始化块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"父类实例初始化块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"父类的构造器"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"子类类初始化块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"子类实例初始化块"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Child</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"子类的构造器"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//第一次new Child();</span></span><br><span class="line">        <span class="keyword">new</span> Child();</span><br><span class="line">        <span class="comment">//第二次new Child();</span></span><br><span class="line">        <span class="keyword">new</span> Child();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>用流程图来简单描述运行流程（贫穷的我只能用试用版亿图图示）：<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200116000008.png" alt=""></p>
+<h1 id="第-6-章-面向对象（下）"><a href="#第-6-章-面向对象（下）" class="headerlink" title="第 6 章 面向对象（下）"></a>第 6 章 面向对象（下）</h1><h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>Java中的基本类型功能简单，不具备对象的特性，为了使基本类型具备对象的特性，所以出现了包装类，就可以像操作对象一样操作基本类型数据。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个包装类Integer的对象</span></span><br><span class="line">Integer int_obj = <span class="keyword">new</span> Integer(<span class="number">1024</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自动装箱：将一个基本类型变量直接赋给对应的包装类变量，或者赋给Object变量。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自动装箱</span></span><br><span class="line"><span class="keyword">int</span> num = <span class="number">1024</span>;<span class="comment">//一个基本类型变量</span></span><br><span class="line">Integer int_obj=num;<span class="comment">//直接赋给Integer包装类变量</span></span><br></pre></td></tr></table></figure></li>
+<li>自动拆箱：与装箱相反，直接把包装类对象赋给一个对应的基本类型变量。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自动拆箱</span></span><br><span class="line">Integer int_obj = <span class="keyword">new</span> Integer(<span class="number">1024</span>);<span class="comment">//一个包装类对象</span></span><br><span class="line"><span class="keyword">int</span> num = int_obj;<span class="comment">//直接赋给基本类型变量</span></span><br></pre></td></tr></table></figure></li>
+<li>基本数据类型和包装类的对应关系</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong>Integer</strong></td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>char</td>
+<td><strong>Character</strong></td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>包装类常用方法<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200116134959.png" alt=""></p>
+<h2 id="打印对象和toString方法"><a href="#打印对象和toString方法" class="headerlink" title="打印对象和toString方法"></a>打印对象和toString方法</h2><p>在Java中可以直接输出类对象。<br>举个栗子：<br>先定义一个简单的类，用于输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在main函数中直接输出Person类对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Person obj = <span class="keyword">new</span> Person(<span class="number">1024</span>);</span><br><span class="line">        System.out.println(obj);<span class="comment">//直接输出类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">============输出结果=============</span><br><span class="line">Person@<span class="number">1f</span>32e575</span><br></pre></td></tr></table></figure>
+<p>实际上这里隐式用到了Object类里的一个实例方法toString()<br>而所有的Java类都是Object类的子类，因此所有的Java对象都具有toString()方法<br>下面这两种形式是等价的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(obj);</span><br><span class="line">System.out.println(obj.toString());</span><br></pre></td></tr></table></figure>
+<p>Object类提供的toString()方法总是返回该对象实现类的”类名+@+hashCode”值。<br>如果想要输出我们想要的结果，就可以重写toString方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//重写这个toString方法（Object类的一个实例方法）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"["</span> + <span class="string">"num="</span> + num + <span class="string">"]"</span>;<span class="comment">//返回我们想要的结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译javac -d . Test.java<br>运行java Test<br>走<del>~</del></p>
+<p>  [num=12]</p>
+</li>
+</ul>
+<p>还是挺好玩的QAQ</p>
+<h2 id="和equals方法"><a href="#和equals方法" class="headerlink" title="==和equals方法"></a>==和equals方法</h2><p>在Java中有两种比较变量的方式：一个是利用==，另一个是利用equals()方法。</p>
+<p><strong>先来说说==运算符。</strong><br>这玩意对于基本数据类型可以直接比较，C++中也经常使用。<br>但是如果用来比较引用类型变量的话，则只有两个引用类型变量都指向同一个对象时，==判断才会返回true。举个栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = Integer.valueOf(<span class="number">1024</span>);</span><br><span class="line"><span class="keyword">var</span> num2 = Integer.valueOf(<span class="number">1024</span>);</span><br><span class="line">System.out.println(num1 == num2);</span><br><span class="line">============输出结果=============</span><br><span class="line"><span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+<p>这里的num1和num2是两个引用类型变量，分别存储着不同的地址，指向不同的位置，==直接判断的是地址，因此输出false</p>
+<p><strong>再讲讲equals方法</strong><br>equals()方法是Object类提供的一个实例方法，因此所有的引用变量都可以调用该方法来判断是否与其他引用变量相等。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = Integer.valueOf(<span class="number">1024</span>);</span><br><span class="line"><span class="keyword">var</span> num2 = Integer.valueOf(<span class="number">1024</span>);</span><br><span class="line">System.out.println(num1.equals(num2));</span><br><span class="line">============输出结果==============</span><br><span class="line"><span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的equals()方法判断的不是地址，而是其指向的值。</p>
+</blockquote>
+<p><strong>自定义equals()方法</strong><br>这个equals()既然是Object类的一个方法，而Object类是所有类的父类。<br>那么我们也可以像自定义toString()方法那样来自定义equals()咯~<br>举个栗子：<br>我们先定义一个”人”类，有名字也有年龄，只要年龄相等，我们就判断这两个是true<br>即p1.equals(p2);应该返回true。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">private</span> String name;<span class="comment">//姓名</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(<span class="keyword">int</span> age,String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//重写equals方法，只判断年龄就好了。</span></span><br><span class="line">    <span class="comment">//重写要求返回值和形参都不能改变。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">this</span>.age==obj.age?<span class="keyword">true</span>:<span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//两个人名字不同，但年龄相同。</span></span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person(<span class="number">18</span>, <span class="string">"Amy"</span>);</span><br><span class="line">        Person p2 = <span class="keyword">new</span> Person(<span class="number">18</span>, <span class="string">"Tom"</span>);</span><br><span class="line">        System.out.println(p1.equals(p2));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译 运行 走<del>~</del></p>
+<pre><code>Exception in thread &quot;main&quot; java.lang.Error: Unresolved compilation problem:
+    age cannot be resolved or is not a field
+
+    at Person.equals(Test.java:32)
+    at Test.main(Test.java:40)</code></pre><p>emmm，竟然报错了。<br>报错信息指向这一段</p>
+<pre><code>obj.age</code></pre><p>obj作为父类，并没有age这个变量。age是Person子类的特有成员！<br>但是想要重写，就必须返回值和形参都不能改变，而形参里面必有Object obj（equals文档说的）<br>那怎么办呢？？<br><strong>强制类型转换</strong><br>也就是需要进行向下转型，((Person)obj).age。<br>同时也要判断obj是不是Person类的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">    <span class="comment">//判断obj对象是不是Person类对象</span></span><br><span class="line">    <span class="keyword">if</span>(obj.getClass() == Person<span class="class">.<span class="keyword">class</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">this</span>.age==((Person)obj).age?<span class="keyword">true</span>:<span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其他不变 编译 运行 走~~</p>
+<pre><code>true</code></pre><blockquote>
+<p>小细节：为什么是((Person)obj).age而不是(Person)obj.age ?<br>这是因为成员运算符（.）的优先级要比括号高。<br>(Person)obj.age就等同于(Person)(obj.age)</p>
+</blockquote>
 
       </div>
       
@@ -800,7 +888,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-16T00:04:36+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-16T15:30:23+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月16日</p>
@@ -984,7 +1072,7 @@
         
           <li><a class="flat-box" title="/categories/%E8%90%8C%E6%96%B0%E8%87%AA%E5%BC%BA%E4%B9%8B%E8%B7%AF/" href="/categories/%E8%90%8C%E6%96%B0%E8%87%AA%E5%BC%BA%E4%B9%8B%E8%B7%AF/"><div class='name'>萌新自强之路</div><div class='badge'>(6)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" href="/categories/%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"><div class='name'>踩过的坑</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" href="/categories/%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"><div class='name'>踩过的坑</div><div class='badge'>(4)</div></a></li>
         
       </ul>
     </div>
@@ -1094,7 +1182,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第-1-章-Java语言概述与开发环境"><span class="toc-text">第 1 章 Java语言概述与开发环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第-3-章-数据类型和运算符"><span class="toc-text">第 3 章 数据类型和运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#自动提升规则"><span class="toc-text">自动提升规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接量"><span class="toc-text">直接量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常量池"><span class="toc-text">常量池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#位运算"><span class="toc-text">位运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组类型"><span class="toc-text">数组类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#foreach循环"><span class="toc-text">foreach循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深入数组"><span class="toc-text">深入数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二维数组"><span class="toc-text">二维数组</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第-5-章-面向对象（上）"><span class="toc-text">第 5 章 面向对象（上）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于static的问题"><span class="toc-text">关于static的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法的参数传递机制"><span class="toc-text">方法的参数传递机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#形参个数可变的方法"><span class="toc-text">形参个数可变的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员变量和局部变量"><span class="toc-text">成员变量和局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员变量的初始化和内存中的运行机制"><span class="toc-text">成员变量的初始化和内存中的运行机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部变量的初始化和内存中的运行机制"><span class="toc-text">局部变量的初始化和内存中的运行机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问控制符"><span class="toc-text">访问控制符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具方法"><span class="toc-text">工具方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#package包机制"><span class="toc-text">package包机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个使用包机制的示例"><span class="toc-text">一个使用包机制的示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import关键字"><span class="toc-text">import关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java常用包"><span class="toc-text">Java常用包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java构造器"><span class="toc-text">Java构造器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的继承"><span class="toc-text">类的继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重写父类的方法"><span class="toc-text">重写父类的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super限定"><span class="toc-text">super限定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载（overload）与重写（override）"><span class="toc-text">重载（overload）与重写（override）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子类调用父类的构造器"><span class="toc-text">子类调用父类的构造器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instanceof运算符"><span class="toc-text">instanceof运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用继承的注意点"><span class="toc-text">使用继承的注意点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合"><span class="toc-text">组合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化块"><span class="toc-text">初始化块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例初始化块"><span class="toc-text">实例初始化块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类初始化块"><span class="toc-text">类初始化块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【重点】实例初始化快、类初始化快、构造器的执行顺序"><span class="toc-text">【重点】实例初始化快、类初始化快、构造器的执行顺序</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第-1-章-Java语言概述与开发环境"><span class="toc-text">第 1 章 Java语言概述与开发环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第-3-章-数据类型和运算符"><span class="toc-text">第 3 章 数据类型和运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#自动提升规则"><span class="toc-text">自动提升规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接量"><span class="toc-text">直接量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常量池"><span class="toc-text">常量池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#位运算"><span class="toc-text">位运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组类型"><span class="toc-text">数组类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#foreach循环"><span class="toc-text">foreach循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深入数组"><span class="toc-text">深入数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二维数组"><span class="toc-text">二维数组</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第-5-章-面向对象（上）"><span class="toc-text">第 5 章 面向对象（上）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于static的问题"><span class="toc-text">关于static的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法的参数传递机制"><span class="toc-text">方法的参数传递机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#形参个数可变的方法"><span class="toc-text">形参个数可变的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员变量和局部变量"><span class="toc-text">成员变量和局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员变量的初始化和内存中的运行机制"><span class="toc-text">成员变量的初始化和内存中的运行机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#局部变量的初始化和内存中的运行机制"><span class="toc-text">局部变量的初始化和内存中的运行机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#访问控制符"><span class="toc-text">访问控制符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具方法"><span class="toc-text">工具方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#package包机制"><span class="toc-text">package包机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个使用包机制的示例"><span class="toc-text">一个使用包机制的示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import关键字"><span class="toc-text">import关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java常用包"><span class="toc-text">Java常用包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java构造器"><span class="toc-text">Java构造器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的继承"><span class="toc-text">类的继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重写父类的方法"><span class="toc-text">重写父类的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super限定"><span class="toc-text">super限定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载（overload）与重写（override）"><span class="toc-text">重载（overload）与重写（override）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子类调用父类的构造器"><span class="toc-text">子类调用父类的构造器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instanceof运算符"><span class="toc-text">instanceof运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用继承的注意点"><span class="toc-text">使用继承的注意点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合"><span class="toc-text">组合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化块"><span class="toc-text">初始化块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例初始化块"><span class="toc-text">实例初始化块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类初始化块"><span class="toc-text">类初始化块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【重点】实例初始化快、类初始化快、构造器的执行顺序"><span class="toc-text">【重点】实例初始化快、类初始化快、构造器的执行顺序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第-6-章-面向对象（下）"><span class="toc-text">第 6 章 面向对象（下）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-text">包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打印对象和toString方法"><span class="toc-text">打印对象和toString方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#和equals方法"><span class="toc-text">&#x3D;&#x3D;和equals方法</span></a></li></ol></li></ol>
     </div>
   </section>
 
