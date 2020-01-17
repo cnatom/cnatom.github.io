@@ -345,7 +345,7 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-16T20:07:12+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-16T20:22:19+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月16日</p>
@@ -976,6 +976,10 @@
 <p>举个栗子，使用上述Itf接口：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Itf</span></span>&#123;</span><br><span class="line">    <span class="comment">//实现接口的抽象方法，需要用public</span></span><br><span class="line">    <span class="comment">//否则会报错：正在尝试分配更低的访问权限; 以前为public</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">abs_fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"实现了接口中的抽象方法fun"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Itf obj = <span class="keyword">new</span> Test();</span><br><span class="line">        System.out.println(obj.num);<span class="comment">//调用接口中的常量</span></span><br><span class="line">        obj.abs_fun();<span class="comment">//使用接口的对象调用了实现类所实现的抽象方法</span></span><br><span class="line">        obj.def_fun();<span class="comment">//可以直接调用接口的默认方法</span></span><br><span class="line">        Itf.sta_fun();<span class="comment">//使用接口来调用接口的类方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">==========输出结果==========</span><br><span class="line"><span class="number">1024</span></span><br><span class="line">实现了接口中的抽象方法fun</span><br><span class="line">默认方法</span><br><span class="line">类方法</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>实现接口方法时，必须使用public修饰符，因为接口里的方法都是public的，而子类重写父类方法时访问权限只能是更大或者相等。</p>
+</blockquote>
+
       </div>
       
       
@@ -987,7 +991,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-16T20:07:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-16T20:22:19+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年1月16日</p>
