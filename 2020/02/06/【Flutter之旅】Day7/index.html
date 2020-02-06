@@ -6,7 +6,7 @@
   <meta name="google-site-verification" content="zNu2MM0qAdwd9Lbu6bBXPNa19fMK_9sfkuMZam6u7Dc" />
   <meta name="baidu-site-verification" content="dtMz3Rjl4v" />
   
-  <title>【C++】第6章作业 | 阿腾木的小世界</title>
+  <title>【Flutter之旅】项目的第一步：启动页-Day7 | 阿腾木的小世界</title>
   
   
 
@@ -249,8 +249,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/11/24/%E3%80%90C-%E3%80%91%E7%AC%AC6%E7%AB%A0%E4%BD%9C%E4%B8%9A/">
-        【C++】第6章作业
+      <a href="/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day7/">
+        【Flutter之旅】项目的第一步：启动页-Day7
       </a>
     </h1>
   
@@ -281,7 +281,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-11-24</p>
+    <p>2020-02-06</p>
   </a>
 </div>
 
@@ -291,9 +291,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/C-%E7%90%86%E8%AE%BA%E4%BD%9C%E4%B8%9A/' rel="nofollow">
+    <a href='/categories/Flutter%E7%A7%BB%E5%8A%A8%E4%B9%8B%E6%97%85/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>C++理论作业</p>
+      <p>Flutter移动之旅</p>
     </a>
   </div>
 
@@ -325,14 +325,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>927字</p>
+        <p>331字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>4分</p>
+        <p>1分</p>
       </a>
     </div>
   
@@ -345,10 +345,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-28T00:27:34+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-06T23:22:19+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月28日</p>
+    <p>更新于 2020年2月6日</p>
   </a>
 </div>
 
@@ -364,48 +364,18 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <hr>
-<h1 id="插入字符串"><a href="#插入字符串" class="headerlink" title="插入字符串"></a>插入字符串</h1><p>【问题描述】从键盘输入一个字符串，并在串中的第一次出现的最大元素后边插入字符串”ab”。</p>
-<p>【输入形式】任意输入一个字符串</p>
-<p>【输出形式】在串中的最大元素后边插入字符串”ab”</p>
-<p>【样例输入】123csCUMT<br>【样例输出】123csabCUMT</p>
-<p>【样例说明】为了保证输入的字符串有空格，请使用cin.getline(char* , int);</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> maxnum=<span class="number">0</span>,maxwhere=<span class="number">0</span>,i;</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">500</span>];</span><br><span class="line"><span class="built_in">cin</span>.getline(str,<span class="number">500</span>);</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;str[i]!=<span class="string">'\0'</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>((<span class="keyword">int</span>)str[i]&gt;maxnum)</span><br><span class="line">    &#123;</span><br><span class="line">    maxnum=(<span class="keyword">int</span>)str[i];</span><br><span class="line">    maxwhere=i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=maxwhere;i++) <span class="built_in">cout</span> &lt;&lt; str[i];</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"ab"</span>;</span><br><span class="line"><span class="keyword">for</span>(i=maxwhere+<span class="number">1</span>;str[i]!=<span class="string">'\0'</span>;i++) <span class="built_in">cout</span> &lt;&lt; str[i];</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="统计整数个数"><a href="#统计整数个数" class="headerlink" title="统计整数个数"></a>统计整数个数</h1><p>【问题描述】输入一个字符串，其包括数字和非数字字符，如：a123x456 17935? 098tab，将其中连续的数字作为一个整数，依次存放到数组a中，统计共有多少个整数，并输出这些数。</p>
-<p>【输入形式】数字和非数字字符的字符串</p>
-<p>【输出形式】1)整数个数2）分别输出整数<br>【样例输入】a123x456 17935? 098tab583【注意需要保留带有空格的字符串，请不要使用gets，cin，练习使用cin.getline(char *str, int maxnum)】</p>
-<p>【样例输出】</p>
-<pre><code>5
-
-123
-
-456
-
-17935
-
-98
-
-583</code></pre><p>【样例说明】第一个输出项为整数的个数，后面的分别为具体的整数。注意，不需要输出提示类文字，如：“整数为”，“分别为”等字样。直接输出结果。有一个数字的也要输出。测试用例中没有超过整数范围连续数字。当遇到0开头的数字应舍去0。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">200</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_num</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;<span class="keyword">return</span> (c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>)?<span class="number">1</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> str[MAX];</span><br><span class="line">    <span class="keyword">int</span> total=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>.getline(str,MAX);</span><br><span class="line">    <span class="keyword">if</span>(is_num(str[<span class="number">0</span>]))total++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;str[i]!=<span class="string">'\0'</span>;i++) <span class="keyword">if</span>(is_num(str[i])&amp;&amp;!is_num(str[i<span class="number">-1</span>])) total++;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; total &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;str[i]!=<span class="string">'\0'</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!is_num(str[i])||(str[i]==<span class="string">'0'</span>&amp;&amp;!is_num(str[i<span class="number">-1</span>])&amp;&amp;is_num(str[i+<span class="number">1</span>])))<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">while</span>(is_num(str[i])) <span class="built_in">cout</span> &lt;&lt; str[i++];</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;	</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="字符串排序"><a href="#字符串排序" class="headerlink" title="字符串排序"></a>字符串排序</h1><p>【问题描述】有5个字符串，首先将它们按照字符串中字符个数由小到大排序，再分别取出每个字符串的第三个字母合并成一个新的字符串输出（若少于三个字符的输出空格）。要求：利用字符串指针和指针数组实现。</p>
-<p>【输入形式】5个字符串，用回车分隔<br>【输出形式】输出一个字符串：按5个字符串中字符个数由小到大排序，再分别取出每个字符串的第三个字母合并成一个新的字符串输出，若少于三个字符的输出空格</p>
-<p>【样例输入】</p>
-<pre><code>test1234
-
-123test
-
-cumt
-
-think
-
-apples</code></pre><p>【样例输出】</p>
-<pre><code>cumt think apples 123test test1234
-
-concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串之间用一个空格。字符数量相等的串相对顺序不变。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//	freopen("1.in","r",stdin);</span></span><br><span class="line"><span class="comment">//	freopen("1.out","w",stdout);</span></span><br><span class="line">    <span class="keyword">char</span> *ch[<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++) </span><br><span class="line">    &#123;</span><br><span class="line">        ch[i]=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">10</span>]; </span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; ch[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">5</span>-i<span class="number">-1</span>;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">strlen</span>(ch[j])&gt;<span class="built_in">strlen</span>(ch[j+<span class="number">1</span>]))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">char</span> *temp=ch[j];</span><br><span class="line">                ch[j]=ch[j+<span class="number">1</span>];</span><br><span class="line">                ch[j+<span class="number">1</span>]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)<span class="built_in">cout</span> &lt;&lt; ch[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"concatenate string:"</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">strlen</span>(ch[i])&lt;<span class="number">3</span>)<span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; ch[i][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">delete</span> ch[i];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//	fclose(stdin);</span></span><br><span class="line"><span class="comment">//	fclose(stdout);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>设置状态栏|启动页的布局方式</p>
+</blockquote>
+<a id="more"></a>
+<p>项目来源：<a href="https://github.com/LiveLikeCounter/Flutter-Todolist" target="_blank" rel="noopener">https://github.com/LiveLikeCounter/Flutter-Todolist</a></p>
+<ul>
+<li><p>效果<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200206231846.png" alt=""></p>
+</li>
+<li><p>源代码</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/services.dart'</span>;</span><br><span class="line"><span class="keyword">void</span> main()&#123;</span><br><span class="line">  <span class="comment">//设置状态栏</span></span><br><span class="line">  SystemChrome.setSystemUIOverlayStyle(</span><br><span class="line">      SystemUiOverlayStyle(</span><br><span class="line">          statusBarColor: Colors.transparent<span class="comment">//隐藏顶部状态栏</span></span><br><span class="line">      )</span><br><span class="line">  );</span><br><span class="line">  runApp(MaterialApp(</span><br><span class="line">    debugShowCheckedModeBanner: <span class="keyword">false</span>,<span class="comment">//不显示debug横幅</span></span><br><span class="line">      home:MyApp()</span><br><span class="line">  ));</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: Center(<span class="comment">//整体居中</span></span><br><span class="line">          child: Container(<span class="comment">//Container用来调整宽度</span></span><br><span class="line">            <span class="comment">//根据不同的屏幕大小调整Container的宽度</span></span><br><span class="line">            width: MediaQuery.of(context).size.width / <span class="number">1.2</span>,</span><br><span class="line">            child: Column(<span class="comment">//垂直布局</span></span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                Expanded(</span><br><span class="line">                  flex: <span class="number">8</span>,<span class="comment">//flex调整比例</span></span><br><span class="line">                  child: Container(</span><br><span class="line">                    width: MediaQuery.of(context).size.width/<span class="number">2.5</span>,</span><br><span class="line">                    child: Image.network(<span class="string">"https://cdn.jsdelivr.net/gh/cnatom/images/images/diary.png"</span>),),</span><br><span class="line">                ),</span><br><span class="line">                Expanded(</span><br><span class="line">                  flex: <span class="number">3</span>,</span><br><span class="line">                  child: Column(</span><br><span class="line">                    children: &lt;Widget&gt;[</span><br><span class="line">                      Text(</span><br><span class="line">                        <span class="string">'阿腾木的小世界'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                            fontSize: <span class="number">22</span>,</span><br><span class="line">                            fontWeight: FontWeight.w500,</span><br><span class="line">                            color: Color.fromRGBO(<span class="number">85</span>, <span class="number">78</span>, <span class="number">143</span>, <span class="number">1</span>)),</span><br><span class="line">                      ),</span><br><span class="line">                      SizedBox(height: <span class="number">15</span>),<span class="comment">//间距</span></span><br><span class="line">                      Text(</span><br><span class="line">                        <span class="string">'ccatom.com'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                            fontSize: <span class="number">17</span>,</span><br><span class="line">                            fontWeight: FontWeight.w400,</span><br><span class="line">                            color: Color.fromRGBO(<span class="number">130</span>, <span class="number">160</span>, <span class="number">183</span>, <span class="number">1</span>),</span><br><span class="line">                            ),</span><br><span class="line">                      ),</span><br><span class="line">                    ],</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">                Expanded(</span><br><span class="line">                  flex: <span class="number">1</span>,</span><br><span class="line">                  child: RaisedButton(</span><br><span class="line">                    onPressed: () &#123;&#125;,</span><br><span class="line">                    textColor: Colors.white,</span><br><span class="line">                    padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">0.0</span>),</span><br><span class="line">                    shape: RoundedRectangleBorder(</span><br><span class="line">                      borderRadius: BorderRadius.circular(<span class="number">8.0</span>),</span><br><span class="line">                    ),</span><br><span class="line">                    child: Container(</span><br><span class="line">                      width: MediaQuery.of(context).size.width / <span class="number">1.4</span>,</span><br><span class="line">                      height: <span class="number">60</span>,</span><br><span class="line">                      decoration: <span class="keyword">const</span> BoxDecoration(</span><br><span class="line">                        gradient: LinearGradient(</span><br><span class="line">                          colors: &lt;Color&gt;[</span><br><span class="line">                            Color.fromRGBO(<span class="number">93</span>, <span class="number">230</span>, <span class="number">26</span>, <span class="number">1</span>),</span><br><span class="line">                            Color.fromRGBO(<span class="number">57</span>, <span class="number">170</span>, <span class="number">2</span>, <span class="number">1</span>),</span><br><span class="line">                          ],</span><br><span class="line">                        ),</span><br><span class="line">                        borderRadius: BorderRadius.all(</span><br><span class="line">                          Radius.circular(<span class="number">8.0</span>),</span><br><span class="line">                        ),</span><br><span class="line">                        boxShadow: [</span><br><span class="line">                          BoxShadow(</span><br><span class="line">                            color: Color.fromRGBO(<span class="number">30</span>, <span class="number">209</span>, <span class="number">2</span>, <span class="number">0.24</span>),</span><br><span class="line">                            blurRadius: <span class="number">15.0</span>,</span><br><span class="line">                            spreadRadius: <span class="number">7.0</span>,</span><br><span class="line">                            offset: Offset(<span class="number">0.0</span>, <span class="number">0.0</span>),</span><br><span class="line">                          ),</span><br><span class="line">                        ],</span><br><span class="line">                      ),</span><br><span class="line">                      padding: <span class="keyword">const</span> EdgeInsets.fromLTRB(<span class="number">20</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">10</span>),</span><br><span class="line">                      child: Center(</span><br><span class="line">                        child: Text(</span><br><span class="line">                          <span class="string">'进入'</span>,</span><br><span class="line">                          style: TextStyle(</span><br><span class="line">                              fontSize: <span class="number">18</span>, fontWeight: FontWeight.w500),</span><br><span class="line">                        ),</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">                Expanded(</span><br><span class="line">                  flex: <span class="number">2</span>,</span><br><span class="line">                  child: Container(),</span><br><span class="line">                )</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          )</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       </div>
       
@@ -418,10 +388,10 @@ concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-28T00:27:34+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-06T23:22:19+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月28日</p>
+    <p>更新于 2020年2月6日</p>
   </a>
 </div>
 
@@ -430,7 +400,7 @@ concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串�
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>C++</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/flutter/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>flutter</p></a></div>
 
 
         
@@ -443,7 +413,9 @@ concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串�
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2019/11/24/%E3%80%90C-%E3%80%91%E7%AC%AC6%E7%AB%A0%E4%BD%9C%E4%B8%9A/&title=【C++】第6章作业 | 阿腾木的小世界&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day7/&title=【Flutter之旅】项目的第一步：启动页-Day7 | 阿腾木的小世界&summary=
+设置状态栏|启动页的布局方式
+"
           
           >
           
@@ -455,7 +427,9 @@ concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串�
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2019/11/24/%E3%80%90C-%E3%80%91%E7%AC%AC6%E7%AB%A0%E4%BD%9C%E4%B8%9A/&title=【C++】第6章作业 | 阿腾木的小世界&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day7/&title=【Flutter之旅】项目的第一步：启动页-Day7 | 阿腾木的小世界&summary=
+设置状态栏|启动页的布局方式
+"
           
           >
           
@@ -467,7 +441,9 @@ concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串�
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2019/11/24/%E3%80%90C-%E3%80%91%E7%AC%AC6%E7%AB%A0%E4%BD%9C%E4%B8%9A/&title=【C++】第6章作业 | 阿腾木的小世界&summary="
+          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day7/&title=【Flutter之旅】项目的第一步：启动页-Day7 | 阿腾木的小世界&summary=
+设置状态栏|启动页的布局方式
+"
           
           >
           
@@ -491,40 +467,21 @@ concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串�
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2019/11/24/%E3%80%90C-%E3%80%91%E7%AC%AC9%E7%AB%A0%E4%BD%9C%E4%B8%9A/" rel="prev" title="【C++】第9章作业">
-                                
-                                    【C++】第9章作业
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> C++</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2019/11/24/%E3%80%90C-%E3%80%91%E7%AC%AC5%E7%AB%A0%E4%BD%9C%E4%B8%9A/" rel="prev" title="【C++】第5章作业">
+                              <a href="/2020/01/31/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day6/" rel="prev" title="【Flutter之旅】精简版QQ-Day6">
                                   
-                                      【C++】第5章作业
+                                      【Flutter之旅】精简版QQ-Day6
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> C++</a>
+                                  <a class="tag" href="/tags/flutter/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> flutter</a>
                               </h6>
                           
                       </span>
@@ -568,7 +525,7 @@ concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串�
 
   <script>
     window.subData = {
-      title: '【C++】第6章作业',
+      title: '【Flutter之旅】项目的第一步：启动页-Day7',
       tools: true
     }
   </script>
@@ -719,20 +676,6 @@ concatenate string:mip3s</code></pre><p>【样例说明】输出每个字符串�
           
             
               
-  <section class='widget toc-wrapper'>
-    
-<header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
-  
-    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
-  
-</header>
-
-    <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#插入字符串"><span class="toc-text">插入字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#统计整数个数"><span class="toc-text">统计整数个数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串排序"><span class="toc-text">字符串排序</span></a></li></ol>
-    </div>
-  </section>
-
 
             
           
