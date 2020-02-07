@@ -244,6 +244,20 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
+	            <a href="/2020/02/07/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day8/">
+	              <time>02-07</time>
+	              <span class="title">
+	                
+	                  【Flutter之旅】滑动视图-Day8
+	                
+	                
+									
+									
+	              </span>
+	            </a>
+	          </div>
+	      
+	          <div class="archive-item archive-post mark">
 	            <a href="/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day7/">
 	              <time>02-06</time>
 	              <span class="title">
@@ -911,7 +925,7 @@
         
           <li><a class="flat-box" title="/categories/C-%E7%90%86%E8%AE%BA%E4%BD%9C%E4%B8%9A/" href="/categories/C-%E7%90%86%E8%AE%BA%E4%BD%9C%E4%B8%9A/"><div class='name'>C++理论作业</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Flutter%E7%A7%BB%E5%8A%A8%E4%B9%8B%E6%97%85/" href="/categories/Flutter%E7%A7%BB%E5%8A%A8%E4%B9%8B%E6%97%85/"><div class='name'>Flutter移动之旅</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/Flutter%E7%A7%BB%E5%8A%A8%E4%B9%8B%E6%97%85/" href="/categories/Flutter%E7%A7%BB%E5%8A%A8%E4%B9%8B%E6%97%85/"><div class='name'>Flutter移动之旅</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/"><div class='name'>备忘录</div><div class='badge'>(3)</div></a></li>
         
@@ -1272,6 +1286,44 @@ setInterval("createtime()",250);
 
 	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
 	
+
+	
+	    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 	
 
