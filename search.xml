@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【Flutter之旅】壁纸APP(API初试)-Day10</title>
+      <link href="/2020/02/10/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day10/"/>
+      <url>/2020/02/10/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day10/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>引用pexels的API | dio网络请求 | Json转实体类 </p></blockquote><a id="more"></a><ul><li>效果</li></ul><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200210175123.gif" alt=""></p><ul><li>源代码：<a href="https://github.com/cnatom/wall_paper" target="_blank" rel="noopener">https://github.com/cnatom/wall_paper</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter移动之旅 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Flutter之旅】Json和序列化-Day9</title>
       <link href="/2020/02/08/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day9/"/>
       <url>/2020/02/08/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day9/</url>
