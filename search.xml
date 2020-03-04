@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>用Python爬取豆瓣热门剧名及其评分信息</title>
+      <link href="/2020/03/04/Python-Reptile-douban/"/>
+      <url>/2020/03/04/Python-Reptile-douban/</url>
+      
+        <content type="html"><![CDATA[<h2 id="爬取目标"><a href="#爬取目标" class="headerlink" title="爬取目标"></a>爬取目标</h2><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200304205423.png" alt=""></p><h2 id="用chrome-Devtools寻找信息"><a href="#用chrome-Devtools寻找信息" class="headerlink" title="用chrome Devtools寻找信息"></a>用chrome Devtools寻找信息</h2><ul><li><strong>URL和请求方式</strong></li></ul><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200304210256.png" alt=""></p><ul><li><strong>Params和User-Agent</strong></li></ul><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200304211305.png" alt=""></p><blockquote><p>当点击“加载更多”的时候，page_start参数会自增20，因此定义Params的时候要用一个循环</p></blockquote><h2 id="用Postman预览Json字符串"><a href="#用Postman预览Json字符串" class="headerlink" title="用Postman预览Json字符串"></a>用Postman预览Json字符串</h2><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200304211647.png" alt=""></p><blockquote><p>这里我们只需要获得rate和name信息</p></blockquote><h2 id="用Python抓取"><a href="#用Python抓取" class="headerlink" title="用Python抓取"></a>用Python抓取</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">url = <span class="string">'https://movie.douban.com/j/search_subjects'</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">100</span>,<span class="number">20</span>):</span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">'type'</span>: <span class="string">'tv'</span>,</span><br><span class="line">        <span class="string">'tag'</span>: <span class="string">'热门'</span>,</span><br><span class="line">        <span class="string">'sort'</span>: <span class="string">'recommend'</span>,</span><br><span class="line">        <span class="string">'page_limit'</span>: <span class="number">20</span>,</span><br><span class="line">        <span class="string">'page_start'</span>: i</span><br><span class="line">    &#125;</span><br><span class="line">    res = requests.get(</span><br><span class="line">        url = url,</span><br><span class="line">        params = params,</span><br><span class="line">        headers = headers</span><br><span class="line">    )</span><br><span class="line">    html = res.text</span><br><span class="line">    data = json.loads(html)</span><br><span class="line">    <span class="keyword">for</span> data_temp <span class="keyword">in</span> data[<span class="string">'subjects'</span>]:</span><br><span class="line">        print(data_temp[<span class="string">'title'</span>],data_temp[<span class="string">'rate'</span>])</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python爬虫 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 爬虫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python网络请求模块Requests的使用</title>
       <link href="/2020/03/04/Python-Requests/"/>
       <url>/2020/03/04/Python-Requests/</url>
