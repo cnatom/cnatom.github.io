@@ -6,7 +6,7 @@
   <meta name="google-site-verification" content="zNu2MM0qAdwd9Lbu6bBXPNa19fMK_9sfkuMZam6u7Dc" />
   <meta name="baidu-site-verification" content="dtMz3Rjl4v" />
   
-  <title>【Flutter之旅】滑动视图-Day8 | 阿腾木的小世界</title>
+  <title>【Flutter之旅】启动页 | 阿腾木的小世界</title>
   
   
 
@@ -249,8 +249,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/02/07/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day8/">
-        【Flutter之旅】滑动视图-Day8
+      <a href="/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91%E5%90%AF%E5%8A%A8%E9%A1%B5/">
+        【Flutter之旅】启动页
       </a>
     </h1>
   
@@ -281,7 +281,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-07</p>
+    <p>2020-02-06</p>
   </a>
 </div>
 
@@ -325,7 +325,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>256字</p>
+        <p>331字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -345,10 +345,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-07T19:35:25+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-03T12:49:02+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年2月7日</p>
+    <p>更新于 2020年5月3日</p>
   </a>
 </div>
 
@@ -365,14 +365,15 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <blockquote>
-<p>PageView滑动视图|PageController调整页面的显示</p>
+<p>设置状态栏|启动页的布局方式</p>
 </blockquote>
 <a id="more"></a>
+<p>项目来源：<a href="https://github.com/LiveLikeCounter/Flutter-Todolist" target="_blank" rel="noopener">https://github.com/LiveLikeCounter/Flutter-Todolist</a></p>
 <ul>
-<li><p>效果<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200207192942.gif" alt=""></p>
+<li><p>效果<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200206231846.png" alt=""></p>
 </li>
 <li><p>源代码</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/cupertino.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">void</span> main()=&gt;runApp(MaterialApp(</span><br><span class="line">  home: MyApp(),</span><br><span class="line">));</span><br><span class="line"><span class="comment">//创建一个PageController，方便使用底部导航栏改变PageView的内容</span></span><br><span class="line">PageController _pageController = <span class="keyword">new</span> PageController();</span><br><span class="line"><span class="built_in">int</span> _curIndex = <span class="number">0</span>;<span class="comment">//当前索引</span></span><br><span class="line"><span class="comment">//纯色页面，用Page类构造函数批量生成</span></span><br><span class="line"><span class="keyword">var</span> pages = &lt;Widget&gt;[</span><br><span class="line">  Page(Colors.orange),</span><br><span class="line">  Page(Colors.purple),</span><br><span class="line">  Page(Colors.green)</span><br><span class="line">];</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  Color c;</span><br><span class="line">  Page(<span class="keyword">this</span>.c);</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: Container(color: c,),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _MyAppState createState() =&gt; _MyAppState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MyAppState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyApp</span>&gt; </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">"滑动"</span>),</span><br><span class="line">      ),</span><br><span class="line">      <span class="comment">//PageView滑动界面 [https://www.jianshu.com/p/036c3b865820]</span></span><br><span class="line">      body: PageView.builder(</span><br><span class="line">        controller: _pageController,</span><br><span class="line">        itemBuilder: (context,index) =&gt; pages[index],</span><br><span class="line">        itemCount: pages.length,</span><br><span class="line">        <span class="comment">//当滑动的时候改变当前索引,并刷新界面</span></span><br><span class="line">        onPageChanged: (index)&#123;</span><br><span class="line">          setState(() &#123;</span><br><span class="line">            _curIndex = index;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">      <span class="comment">//创建底部导航栏</span></span><br><span class="line">      bottomNavigationBar: BottomNavigationBar(</span><br><span class="line">        items: [</span><br><span class="line">          BottomNavigationBarItem(</span><br><span class="line">            title: Text(<span class="string">"Orange"</span>),</span><br><span class="line">            icon:Icon(Icons.star)</span><br><span class="line">          ),</span><br><span class="line">          BottomNavigationBarItem(</span><br><span class="line">            title: Text(<span class="string">"Purple"</span>),</span><br><span class="line">            icon:Icon(Icons.star)</span><br><span class="line">          ),</span><br><span class="line">          BottomNavigationBarItem(</span><br><span class="line">              title: Text(<span class="string">"Green"</span>),</span><br><span class="line">              icon:Icon(Icons.star)</span><br><span class="line">          )</span><br><span class="line">        ],</span><br><span class="line">        currentIndex: _curIndex,</span><br><span class="line">          <span class="comment">//在导航栏中利用Controller改变PageView</span></span><br><span class="line">        onTap: (index)&#123;</span><br><span class="line">          _pageController.jumpToPage(index);</span><br><span class="line">        &#125;</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/services.dart'</span>;</span><br><span class="line"><span class="keyword">void</span> main()&#123;</span><br><span class="line">  <span class="comment">//设置状态栏</span></span><br><span class="line">  SystemChrome.setSystemUIOverlayStyle(</span><br><span class="line">      SystemUiOverlayStyle(</span><br><span class="line">          statusBarColor: Colors.transparent<span class="comment">//隐藏顶部状态栏</span></span><br><span class="line">      )</span><br><span class="line">  );</span><br><span class="line">  runApp(MaterialApp(</span><br><span class="line">    debugShowCheckedModeBanner: <span class="keyword">false</span>,<span class="comment">//不显示debug横幅</span></span><br><span class="line">      home:MyApp()</span><br><span class="line">  ));</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: Center(<span class="comment">//整体居中</span></span><br><span class="line">          child: Container(<span class="comment">//Container用来调整宽度</span></span><br><span class="line">            <span class="comment">//根据不同的屏幕大小调整Container的宽度</span></span><br><span class="line">            width: MediaQuery.of(context).size.width / <span class="number">1.2</span>,</span><br><span class="line">            child: Column(<span class="comment">//垂直布局</span></span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                Expanded(</span><br><span class="line">                  flex: <span class="number">8</span>,<span class="comment">//flex调整比例</span></span><br><span class="line">                  child: Container(</span><br><span class="line">                    width: MediaQuery.of(context).size.width/<span class="number">2.5</span>,</span><br><span class="line">                    child: Image.network(<span class="string">"https://cdn.jsdelivr.net/gh/cnatom/images/images/diary.png"</span>),),</span><br><span class="line">                ),</span><br><span class="line">                Expanded(</span><br><span class="line">                  flex: <span class="number">3</span>,</span><br><span class="line">                  child: Column(</span><br><span class="line">                    children: &lt;Widget&gt;[</span><br><span class="line">                      Text(</span><br><span class="line">                        <span class="string">'阿腾木的小世界'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                            fontSize: <span class="number">22</span>,</span><br><span class="line">                            fontWeight: FontWeight.w500,</span><br><span class="line">                            color: Color.fromRGBO(<span class="number">85</span>, <span class="number">78</span>, <span class="number">143</span>, <span class="number">1</span>)),</span><br><span class="line">                      ),</span><br><span class="line">                      SizedBox(height: <span class="number">15</span>),<span class="comment">//间距</span></span><br><span class="line">                      Text(</span><br><span class="line">                        <span class="string">'ccatom.com'</span>,</span><br><span class="line">                        style: TextStyle(</span><br><span class="line">                            fontSize: <span class="number">17</span>,</span><br><span class="line">                            fontWeight: FontWeight.w400,</span><br><span class="line">                            color: Color.fromRGBO(<span class="number">130</span>, <span class="number">160</span>, <span class="number">183</span>, <span class="number">1</span>),</span><br><span class="line">                            ),</span><br><span class="line">                      ),</span><br><span class="line">                    ],</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">                Expanded(</span><br><span class="line">                  flex: <span class="number">1</span>,</span><br><span class="line">                  child: RaisedButton(</span><br><span class="line">                    onPressed: () &#123;&#125;,</span><br><span class="line">                    textColor: Colors.white,</span><br><span class="line">                    padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">0.0</span>),</span><br><span class="line">                    shape: RoundedRectangleBorder(</span><br><span class="line">                      borderRadius: BorderRadius.circular(<span class="number">8.0</span>),</span><br><span class="line">                    ),</span><br><span class="line">                    child: Container(</span><br><span class="line">                      width: MediaQuery.of(context).size.width / <span class="number">1.4</span>,</span><br><span class="line">                      height: <span class="number">60</span>,</span><br><span class="line">                      decoration: <span class="keyword">const</span> BoxDecoration(</span><br><span class="line">                        gradient: LinearGradient(</span><br><span class="line">                          colors: &lt;Color&gt;[</span><br><span class="line">                            Color.fromRGBO(<span class="number">93</span>, <span class="number">230</span>, <span class="number">26</span>, <span class="number">1</span>),</span><br><span class="line">                            Color.fromRGBO(<span class="number">57</span>, <span class="number">170</span>, <span class="number">2</span>, <span class="number">1</span>),</span><br><span class="line">                          ],</span><br><span class="line">                        ),</span><br><span class="line">                        borderRadius: BorderRadius.all(</span><br><span class="line">                          Radius.circular(<span class="number">8.0</span>),</span><br><span class="line">                        ),</span><br><span class="line">                        boxShadow: [</span><br><span class="line">                          BoxShadow(</span><br><span class="line">                            color: Color.fromRGBO(<span class="number">30</span>, <span class="number">209</span>, <span class="number">2</span>, <span class="number">0.24</span>),</span><br><span class="line">                            blurRadius: <span class="number">15.0</span>,</span><br><span class="line">                            spreadRadius: <span class="number">7.0</span>,</span><br><span class="line">                            offset: Offset(<span class="number">0.0</span>, <span class="number">0.0</span>),</span><br><span class="line">                          ),</span><br><span class="line">                        ],</span><br><span class="line">                      ),</span><br><span class="line">                      padding: <span class="keyword">const</span> EdgeInsets.fromLTRB(<span class="number">20</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">10</span>),</span><br><span class="line">                      child: Center(</span><br><span class="line">                        child: Text(</span><br><span class="line">                          <span class="string">'进入'</span>,</span><br><span class="line">                          style: TextStyle(</span><br><span class="line">                              fontSize: <span class="number">18</span>, fontWeight: FontWeight.w500),</span><br><span class="line">                        ),</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                ),</span><br><span class="line">                Expanded(</span><br><span class="line">                  flex: <span class="number">2</span>,</span><br><span class="line">                  child: Container(),</span><br><span class="line">                )</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          )</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -387,10 +388,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-07T19:35:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-03T12:49:02+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年2月7日</p>
+    <p>更新于 2020年5月3日</p>
   </a>
 </div>
 
@@ -412,8 +413,8 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/02/07/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day8/&title=【Flutter之旅】滑动视图-Day8 | 阿腾木的小世界&summary=
-PageView滑动视图|PageController调整页面的显示
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91%E5%90%AF%E5%8A%A8%E9%A1%B5/&title=【Flutter之旅】启动页 | 阿腾木的小世界&summary=
+设置状态栏|启动页的布局方式
 "
           
           >
@@ -426,8 +427,8 @@ PageView滑动视图|PageController调整页面的显示
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/02/07/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day8/&title=【Flutter之旅】滑动视图-Day8 | 阿腾木的小世界&summary=
-PageView滑动视图|PageController调整页面的显示
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91%E5%90%AF%E5%8A%A8%E9%A1%B5/&title=【Flutter之旅】启动页 | 阿腾木的小世界&summary=
+设置状态栏|启动页的布局方式
 "
           
           >
@@ -440,8 +441,8 @@ PageView滑动视图|PageController调整页面的显示
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/02/07/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day8/&title=【Flutter之旅】滑动视图-Day8 | 阿腾木的小世界&summary=
-PageView滑动视图|PageController调整页面的显示
+          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91%E5%90%AF%E5%8A%A8%E9%A1%B5/&title=【Flutter之旅】启动页 | 阿腾木的小世界&summary=
+设置状态栏|启动页的布局方式
 "
           
           >
@@ -470,9 +471,9 @@ PageView滑动视图|PageController调整页面的显示
                       <span class="art-item-left">
                           <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                           <h4>
-                              <a href="/2020/02/08/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day9/" rel="prev" title="【Flutter之旅】Json和序列化-Day9">
+                              <a href="/2020/02/07/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91%E6%BB%91%E5%8A%A8%E8%A7%86%E5%9B%BE/" rel="prev" title="【Flutter之旅】滑动视图">
                                 
-                                    【Flutter之旅】Json和序列化-Day9
+                                    【Flutter之旅】滑动视图
                                 
                               </a>
                           </h4>
@@ -490,9 +491,9 @@ PageView滑动视图|PageController调整页面的显示
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2020/02/06/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91Day7/" rel="prev" title="【Flutter之旅】项目的第一步：启动页-Day7">
+                              <a href="/2020/01/31/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91%E7%B2%BE%E7%AE%80%E7%89%88QQ/" rel="prev" title="【Flutter之旅】精简版QQ">
                                   
-                                      【Flutter之旅】项目的第一步：启动页-Day7
+                                      【Flutter之旅】精简版QQ
                                   
                               </a>
                           </h4>
@@ -543,7 +544,7 @@ PageView滑动视图|PageController调整页面的显示
 
   <script>
     window.subData = {
-      title: '【Flutter之旅】滑动视图-Day8',
+      title: '【Flutter之旅】启动页',
       tools: true
     }
   </script>
