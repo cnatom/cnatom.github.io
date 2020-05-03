@@ -6,7 +6,7 @@
   <meta name="google-site-verification" content="zNu2MM0qAdwd9Lbu6bBXPNa19fMK_9sfkuMZam6u7Dc" />
   <meta name="baidu-site-verification" content="dtMz3Rjl4v" />
   
-  <title>P1028 数的计算——萌新的递推公式 | 阿腾木的小世界</title>
+  <title>【Python爬虫】正则表达式Re库的使用 | 阿腾木的小世界</title>
   
   
 
@@ -249,8 +249,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/12/04/P1028-%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E8%90%8C%E6%96%B0%E7%9A%84%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/">
-        P1028 数的计算——萌新的递推公式
+      <a href="/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FRe%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+        【Python爬虫】正则表达式Re库的使用
       </a>
     </h1>
   
@@ -281,7 +281,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-12-04</p>
+    <p>2020-05-03</p>
   </a>
 </div>
 
@@ -291,9 +291,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E8%90%8C%E6%96%B0%E8%87%AA%E5%BC%BA%E4%B9%8B%E8%B7%AF/' rel="nofollow">
+    <a href='/categories/Python%E7%88%AC%E8%99%AB/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>萌新自强之路</p>
+      <p>Python爬虫</p>
     </a>
   </div>
 
@@ -325,14 +325,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>274字</p>
+        <p>709字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>1分</p>
+        <p>3分</p>
       </a>
     </div>
   
@@ -345,10 +345,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-28T00:31:01+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-03T17:08:33+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月28日</p>
+    <p>更新于 2020年5月3日</p>
   </a>
 </div>
 
@@ -364,17 +364,66 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>我们要求找出具有下列性质数的个数(包含输入的自然数n):<br>先输入一个自然数n(n≤1000),然后对此自然数按照如下方法进行处理:<br>1.不作任何处理;<br>2.在它的左边加上一个自然数,但该自然数不能超过原数的一半;<br>3.加上数后,继续按此规则进行处理,直到不能再加自然数为止.</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>1个自然数n(n≤1000)</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>1个整数，表示具有该性质数的个数。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
-<h3 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h3><p>满足条件的数为</p>
-<p>6，16，26，126，36，136</p>
-<hr>
-<p>这个题找规律<br>$a_1=1$<br>$a_n=a_{n-1}+a_{n/2}(n为偶数,奇数a_{n+1}=a_n)$<br>根据递推公式创建一个数组，答案就是$a_n$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	<span class="keyword">int</span> g[<span class="number">1001</span>] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">4</span>;i&lt;=<span class="number">1001</span>;i+=<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		g[i] = g[i<span class="number">-1</span>]+g[i/<span class="number">2</span>];</span><br><span class="line">		g[i+<span class="number">1</span>]=g[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; g[n];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>MOOC课程学习笔记<br>课程链接：<a href="https://www.bilibili.com/video/BV1ME411E7jE?p=1" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1ME411E7jE?p=1</a></p>
+<a id="more"></a>
 
+<h2 id="Re库主要功能函数"><a href="#Re库主要功能函数" class="headerlink" title="Re库主要功能函数"></a>Re库主要功能函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>re.search()</td>
+<td>在一个字符串中搜索匹配正则表达式的第一个位置</td>
+<td>match对象</td>
+</tr>
+<tr>
+<td>re.match()</td>
+<td>从一个字符串的开始位置起匹配正则表达式</td>
+<td>match对象</td>
+</tr>
+<tr>
+<td>re.findall()</td>
+<td>搜索字符串,返回全部能匹配的子串</td>
+<td>list列表</td>
+</tr>
+<tr>
+<td>re.split()</td>
+<td>将一个字符串按照正则表达式匹配结果进行分割</td>
+<td>list列表</td>
+</tr>
+<tr>
+<td>re.finditer()</td>
+<td>搜索字符串,返回匹配结果</td>
+<td>迭代类型,迭代元素是match对象</td>
+</tr>
+<tr>
+<td>re.sub()</td>
+<td>在一个字符串中替换所有匹配正则表达式的子串</td>
+<td>替换后的string字符串</td>
+</tr>
+<tr>
+<td>re.compile()</td>
+<td>将正则表达式的字符串形式编译成正则表达式对象</td>
+<td>正则表达式对象</td>
+</tr>
+</tbody></table>
+<h2 id="实例-以查找邮政编码为例"><a href="#实例-以查找邮政编码为例" class="headerlink" title="实例 (以查找邮政编码为例)"></a>实例 (以查找邮政编码为例)</h2><h3 id="search函数"><a href="#search函数" class="headerlink" title="search函数"></a>search函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># search函数 向后找第一个符合条件的字符串</span></span><br><span class="line">match = re.search(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'BIT 221745 221746'</span>)</span><br><span class="line"><span class="keyword">if</span> match:</span><br><span class="line">    print(match.group(<span class="number">0</span>)) <span class="comment"># 输出 221745</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="match函数"><a href="#match函数" class="headerlink" title="match函数"></a>match函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># match函数 从“第一字符”开始匹配 返回第一个符合条件的字符串</span></span><br><span class="line">match = re.match(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'BIT 221745'</span>) <span class="comment"># 匹配错误,因为第一个是B而不是[1-9]</span></span><br><span class="line">match = re.match(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'221745 221746 BIT'</span>) <span class="comment"># 匹配成功</span></span><br><span class="line"><span class="keyword">if</span> match:</span><br><span class="line">    print(match.group(<span class="number">0</span>)) <span class="comment"># 输出 221745</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="findall函数"><a href="#findall函数" class="headerlink" title="findall函数"></a>findall函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># findall函数 搜索所有符合条件的字符串 以列表形式返回</span></span><br><span class="line">match = re.findall(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'BIT 221745 221746'</span>)</span><br><span class="line">print(match) <span class="comment"># 输出 ['221745', '221746']</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="split函数"><a href="#split函数" class="headerlink" title="split函数"></a>split函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># split函数 按照匹配结果进行分割 返回列表类型</span></span><br><span class="line"><span class="comment"># maxsplit：最大分割数,剩余部分作为最后一个元素输出</span></span><br><span class="line">match = re.split(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'ABC 221745 DEF 221746 GHI 221747'</span>)</span><br><span class="line">print(match) <span class="comment"># 输出 ['ABC ', ' DEF ', ' GHI ', '']</span></span><br><span class="line">match = re.split(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'ABC 221745 DEF 221746 GHI 221747'</span>,maxsplit=<span class="number">1</span>)</span><br><span class="line">print(match) <span class="comment"># 输出 ['ABC ', ' DEF 221746 GHI 221747']</span></span><br><span class="line">match = re.split(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'ABC 221745 DEF 221746 GHI 221747'</span>,maxsplit=<span class="number">2</span>)</span><br><span class="line">print(match) <span class="comment"># 输出 ['ABC ', ' DEF ', ' GHI 221747']</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="finditer函数"><a href="#finditer函数" class="headerlink" title="finditer函数"></a>finditer函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># finditer函数 搜索字符串 返回一个匹配结果的迭代类型(match对象)</span></span><br><span class="line">match = re.finditer(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'ABC 221745 DEF 221746 GHI 221747'</span>)</span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> match:</span><br><span class="line">    <span class="keyword">if</span> m:</span><br><span class="line">        print(m.group(<span class="number">0</span>))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">输出结果：</span></span><br><span class="line"><span class="string">221745</span></span><br><span class="line"><span class="string">221746</span></span><br><span class="line"><span class="string">221747</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sub函数"><a href="#sub函数" class="headerlink" title="sub函数"></a>sub函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sub函数 在一个字符串中替换所有匹配正则表达式的子串 返回替换后的子串</span></span><br><span class="line"><span class="comment"># 这个例子中将邮政编码全部替换成000000</span></span><br><span class="line">match = re.sub(<span class="string">r'[1-9]\d&#123;5&#125;'</span>,<span class="string">'000000'</span>,<span class="string">'ABC 221745 DEF 221746 GHI 221747'</span>)</span><br><span class="line">print(match) <span class="comment"># 输出 ABC 000000 DEF 000000 GHI 000000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="compile函数"><a href="#compile函数" class="headerlink" title="compile函数"></a>compile函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># compile函数 将字符串编译成正则表达式对象</span></span><br><span class="line">regex = re.compile(<span class="string">r'[1-9]\d&#123;5&#125;'</span>) <span class="comment"># 经过一次编译 可多次对此正则表达式进行使用</span></span><br><span class="line">match = regex.search(<span class="string">'ABC 221745 DEF 221746 GHI 221747'</span>)</span><br></pre></td></tr></table></figure>
       </div>
       
       
@@ -386,10 +435,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-28T00:31:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-03T17:08:33+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月28日</p>
+    <p>更新于 2020年5月3日</p>
   </a>
 </div>
 
@@ -398,7 +447,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%88%AC%E8%99%AB/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>爬虫</p></a></div>
 
 
         
@@ -411,7 +460,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2019/12/04/P1028-%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E8%90%8C%E6%96%B0%E7%9A%84%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/&title=P1028 数的计算——萌新的递推公式 | 阿腾木的小世界&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FRe%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/&title=【Python爬虫】正则表达式Re库的使用 | 阿腾木的小世界&summary=MOOC课程学习笔记课程链接：https://www.bilibili.com/video/BV1ME411E7jE?p=1"
           
           >
           
@@ -423,7 +472,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2019/12/04/P1028-%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E8%90%8C%E6%96%B0%E7%9A%84%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/&title=P1028 数的计算——萌新的递推公式 | 阿腾木的小世界&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FRe%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/&title=【Python爬虫】正则表达式Re库的使用 | 阿腾木的小世界&summary=MOOC课程学习笔记课程链接：https://www.bilibili.com/video/BV1ME411E7jE?p=1"
           
           >
           
@@ -435,7 +484,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2019/12/04/P1028-%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E8%90%8C%E6%96%B0%E7%9A%84%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/&title=P1028 数的计算——萌新的递推公式 | 阿腾木的小世界&summary="
+          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8FRe%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/&title=【Python爬虫】正则表达式Re库的使用 | 阿腾木的小世界&summary=MOOC课程学习笔记课程链接：https://www.bilibili.com/video/BV1ME411E7jE?p=1"
           
           >
           
@@ -459,40 +508,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2019/12/06/P1036-%E9%80%89%E6%95%B0%E2%80%94%E2%80%94%E7%B1%BB%E4%BC%BC%E5%85%A8%E6%8E%92%E5%88%97%E9%80%92%E5%BD%92%E5%9B%9E%E6%BA%AF%E6%B3%95/" rel="prev" title="P1036 选数——类似全排列递归回溯法">
-                                
-                                    P1036 选数——类似全排列递归回溯法
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/%E7%AE%97%E6%B3%95/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2019/12/04/P1914-%E5%B0%8F%E4%B9%A6%E7%AB%A5%E2%80%94%E2%80%94%E5%AF%86%E7%A0%81/" rel="prev" title="P1914 小书童——密码">
+                              <a href="/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91HTML%E5%86%85%E5%AE%B9%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95/" rel="prev" title="【Python爬虫】HTML内容查找方法">
                                   
-                                      P1914 小书童——密码
+                                      【Python爬虫】HTML内容查找方法
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/%E7%AE%97%E6%B3%95/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a>
+                                  <a class="tag" href="/tags/python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> python</a> <a class="tag" href="/tags/%E7%88%AC%E8%99%AB/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 爬虫</a>
                               </h6>
                           
                       </span>
@@ -532,49 +562,11 @@
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-      preferredFont: "TeX",
-      availableFonts: ["STIX","TeX"],
-      linebreaks: { automatic:true },
-      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-      processEscapes: true,
-      ignoreClass: "tex2jax_ignore|dno",
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: { autoNumber: "AMS" },
-      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-      Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-  });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
-    }
-  });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
 
 
   <script>
     window.subData = {
-      title: 'P1028 数的计算——萌新的递推公式',
+      title: '【Python爬虫】正则表达式Re库的使用',
       tools: true
     }
   </script>
@@ -671,7 +663,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例"><span class="toc-text">输入样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例"><span class="toc-text">输出样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说明-提示"><span class="toc-text">说明&#x2F;提示</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Re库主要功能函数"><span class="toc-text">Re库主要功能函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例-以查找邮政编码为例"><span class="toc-text">实例 (以查找邮政编码为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#search函数"><span class="toc-text">search函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#match函数"><span class="toc-text">match函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#findall函数"><span class="toc-text">findall函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#split函数"><span class="toc-text">split函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#finditer函数"><span class="toc-text">finditer函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sub函数"><span class="toc-text">sub函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compile函数"><span class="toc-text">compile函数</span></a></li></ol></li></ol>
     </div>
   </section>
 
