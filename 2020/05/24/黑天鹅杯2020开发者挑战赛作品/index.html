@@ -6,7 +6,7 @@
   <meta name="google-site-verification" content="zNu2MM0qAdwd9Lbu6bBXPNa19fMK_9sfkuMZam6u7Dc" />
   <meta name="baidu-site-verification" content="dtMz3Rjl4v" />
   
-  <title>P1308 统计单词数——字符串处理 | 阿腾木的小世界</title>
+  <title>黑天鹅杯2020开发者挑战赛项目总结 | 阿腾木的小世界</title>
   
   
 
@@ -249,8 +249,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/12/03/P1308-%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
-        P1308 统计单词数——字符串处理
+      <a href="/2020/05/24/%E9%BB%91%E5%A4%A9%E9%B9%85%E6%9D%AF2020%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%91%E6%88%98%E8%B5%9B%E4%BD%9C%E5%93%81/">
+        黑天鹅杯2020开发者挑战赛项目总结
       </a>
     </h1>
   
@@ -281,7 +281,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-12-03</p>
+    <p>2020-05-24</p>
   </a>
 </div>
 
@@ -291,9 +291,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E8%90%8C%E6%96%B0%E8%87%AA%E5%BC%BA%E4%B9%8B%E8%B7%AF/' rel="nofollow">
+    <a href='/categories/Flutter%E7%A7%BB%E5%8A%A8%E4%B9%8B%E6%97%85/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>萌新自强之路</p>
+      <p>Flutter移动之旅</p>
     </a>
   </div>
 
@@ -325,14 +325,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>1.1k字</p>
+        <p>1.4k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>4分</p>
+        <p>5分</p>
       </a>
     </div>
   
@@ -345,10 +345,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-28T00:31:11+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-24T14:32:22+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月28日</p>
+    <p>更新于 2020年5月24日</p>
   </a>
 </div>
 
@@ -364,21 +364,70 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，有的还能统计出特定单词在文章中出现的次数。<br>现在，请你编程实现这一功能，具体要求是：给定一个单词，请你输出它在给定的文章中出现的次数和第一次出现的位置。注意：匹配单词时，不区分大小写，但要求完全匹配，即给定单词必须与文章中的某一独立单词在不区分大小写的情况下完全相同（参见样例1 ），如果给定单词仅是文章中某一单词的一部分则不算匹配（参见样例2 ）。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>共2行。</p>
-<p>第1行为一个字符串，其中只含字母，表示给定单词；</p>
-<p>第2行为一个字符串，其中只可能包含字母和空格，表示给定的文章。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>一行，如果在文章中找到给定单词则输出两个整数，两个整数之间用一个空格隔开，分别是单词在文章中出现的次数和第一次出现的位置（即在文章中第一次出现时，单词首字母在文章中的位置，位置从0 开始）；如果单词在文章中没有出现，则直接输出一个整数-1。</p>
-<h3 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a>输入样例1</h3><pre><code>To
-to be or not to be is a question</code></pre><h3 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a>输出样例1</h3><pre><code>2 0</code></pre><h3 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2"></a>输入样例2</h3><pre><code>to
-Did the Ottoman Empire lose its power at that time</code></pre><h3 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2"></a>输出样例2</h3><pre><code>to
-Did the Ottoman Empire lose its power at that time</code></pre><hr>
-<h4 id="我的解法"><a href="#我的解法" class="headerlink" title="我的解法"></a>我的解法</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">strlower</span><span class="params">(<span class="keyword">char</span>* a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//将字符串转换为小写 </span></span><br><span class="line">	<span class="comment">//头文件cstring:判断大小写isupper 临时转换为小写tolower </span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; a[i]; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">isupper</span>(a[i])) a[i] = <span class="built_in">tolower</span>(a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">match</span><span class="params">(<span class="keyword">char</span>* aa, <span class="keyword">char</span>* bb,<span class="keyword">int</span>* ii)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,flag=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="built_in">strlen</span>(aa);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(aa[i]!=bb[i])</span><br><span class="line">		&#123;<span class="comment">//中间有不匹配的</span></span><br><span class="line">			*ii += i; </span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(bb[len]==<span class="string">' '</span>||bb[len]==<span class="string">'\0'</span>)</span><br><span class="line">	&#123;<span class="comment">//匹配到a的结尾，且b[i+1]空格</span></span><br><span class="line">		*ii+=i;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123;<span class="comment">//匹配到单词的结尾，但是文章b[i+1]不是空格</span></span><br><span class="line">		(*ii)++;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">11</span>];</span><br><span class="line">	<span class="keyword">char</span> g[<span class="number">1000001</span>];</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>, location = <span class="number">-1</span>;</span><br><span class="line">	<span class="comment">//用gets函数读取整行 </span></span><br><span class="line">	gets(a);</span><br><span class="line">	gets(g);</span><br><span class="line">	<span class="keyword">int</span> len = <span class="built_in">strlen</span>(g);</span><br><span class="line">	<span class="comment">//将大写转换为小写 </span></span><br><span class="line">	strlower(a);</span><br><span class="line">	strlower(g);</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=len)</span><br><span class="line">	&#123;<span class="comment">//从i=0开始向后遍历文章 </span></span><br><span class="line">		<span class="keyword">if</span> (g[i] == a[<span class="number">0</span>]&amp;&amp;g[i<span class="number">-1</span>]==<span class="string">' '</span> || g[i]==a[<span class="number">0</span>]&amp;&amp;i==<span class="number">0</span>)  </span><br><span class="line">		&#123;<span class="comment">//当 文章空格后的第一个单词 与 给定单词首字母 相同时</span></span><br><span class="line">		 <span class="comment">//或者 文章的第一个单词 与 给定单词首字母 相同时</span></span><br><span class="line">			<span class="keyword">if</span> (match(a, g + i,&amp;i))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(location==<span class="number">-1</span>)location = i-<span class="built_in">strlen</span>(a);</span><br><span class="line">				num++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(location==<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">"-1"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d %d"</span>,num,location);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="用string的做法（作者-Aimyhtixela来自洛谷）"><a href="#用string的做法（作者-Aimyhtixela来自洛谷）" class="headerlink" title="用string的做法（作者: Aimyhtixela来自洛谷）"></a>用string的做法（作者: Aimyhtixela来自洛谷）</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="comment">//命名空间</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//定义两个字符串</span></span><br><span class="line">    <span class="built_in">string</span> a;</span><br><span class="line">    <span class="built_in">string</span> b;</span><br><span class="line">    <span class="comment">//用string库，调用getline, 直接读入一整行</span></span><br><span class="line">    getline(<span class="built_in">cin</span>,a);</span><br><span class="line">    getline(<span class="built_in">cin</span>,b);</span><br><span class="line">    <span class="comment">//转换大小写，可以都转换为大写，或者小写</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length();++i)&#123;</span><br><span class="line">        a[i]=<span class="built_in">tolower</span>(a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;b.length();++i)&#123;</span><br><span class="line">        b[i]=<span class="built_in">tolower</span>(b[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//因为连起来的不算，所以要在前后加几个空格，一定要是同样多的，同量减同量，等于同量</span></span><br><span class="line">    a=<span class="string">' '</span>+a+<span class="string">' '</span>;</span><br><span class="line">    b=<span class="string">' '</span>+b+<span class="string">' '</span>;</span><br><span class="line">    <span class="comment">//先看看会不会找不到，用a.find()和string::npos</span></span><br><span class="line">    <span class="keyword">if</span> (b.find(a)==<span class="built_in">string</span>::npos)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果找得到</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> alpha=b.find(a);</span><br><span class="line">        <span class="keyword">int</span> beta=b.find(a),s=<span class="number">0</span>;<span class="comment">//计数器初始化为0</span></span><br><span class="line">        <span class="keyword">while</span> (beta!=<span class="built_in">string</span>::npos)&#123;</span><br><span class="line">            ++s;<span class="comment">//计数器</span></span><br><span class="line">            beta=b.find(a,beta+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="string">" "</span>&lt;&lt;alpha&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//输出第一个和总共有几个</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//函数返回值为0，结束整个程序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h3><p><em>i++与(</em>i)++的区别，要注意++的优先级要高于取值运算符</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>* ii)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	(*ii)++; <span class="comment">//实参i也+1</span></span><br><span class="line">	*ii++; <span class="comment">//等同于先ii++，将指针后移，然后再取值，实参i不变</span></span><br><span class="line">&#125;</span><br><span class="line">.....</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">fun(i);</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+        <h1 id="赛题"><a href="#赛题" class="headerlink" title="赛题"></a>赛题</h1><h2 id="1-公司资料-100分"><a href="#1-公司资料-100分" class="headerlink" title="1. 公司资料(100分)"></a>1. 公司资料(100分)</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>烛光文化工作室将公司的基本资料发给了你，希望你能将公司的业务内容、理念文化充分展现出来。</p>
+<h3 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h3><p>本题你将使用文档“公司资料”，将全部内容展示出来。<br>你可以根据自己的喜好，或是参照其它优秀的公司官网进行排版设计，任意使用网图和图标，但切忌简单的罗列堆叠。</p>
+<h2 id="2-轮播图（100分）"><a href="#2-轮播图（100分）" class="headerlink" title="2. 轮播图（100分）"></a>2. 轮播图（100分）</h2><h3 id="背景-1"><a href="#背景-1" class="headerlink" title="背景"></a>背景</h3><p>烛光文化又发来几张实拍图，希望你做成轮播图，放在页面的重要位置，作为公司的风采展示。</p>
+<h3 id="题目要求-1"><a href="#题目要求-1" class="headerlink" title="题目要求"></a>题目要求</h3><p>本题你将使用接口：<a href="http://batswan.design:9000/get_pics" target="_blank" rel="noopener">http://batswan.design:9000/get_pics</a> 开发轮播图。你可以任意设计轮播图的显示方式，让图片与文字内容完整、合理、美观得展示出来。<br>本题素材在“轮播图”文件夹中。如果接口的使用让你感到困惑，可以直接使用本地资源，但我们不推荐这样做。</p>
+<h2 id="3-加入我们（150分）"><a href="#3-加入我们（150分）" class="headerlink" title="3. 加入我们（150分）"></a>3. 加入我们（150分）</h2><h3 id="背景-2"><a href="#背景-2" class="headerlink" title="背景"></a>背景</h3><p>每一个优秀的公司都会不断吸纳人才，烛光文化也不例外。烛光希望你在页面底部位置增加“加入我们”模块，让同学们自主填写个人信息、投递简历。</p>
+<h3 id="题目要求-2"><a href="#题目要求-2" class="headerlink" title="题目要求"></a>题目要求</h3><p>本题你将开发一组表单，让用户填写姓名、学院、年级、自我介绍、QQ/微信号，并使用接口<a href="http://batswan.design:9000/join" target="_blank" rel="noopener">http://batswan.design:9000/join</a>  将表单内容发送给服务端。</p>
+<h3 id="接口请求规则"><a href="#接口请求规则" class="headerlink" title="接口请求规则"></a>接口请求规则</h3><ul>
+<li>请求方式：    POST</li>
+<li>数据格式：    JSON</li>
+<li>参数5个：     name（姓名），department（学院），qq（QQ/微信号），grade                        （年级），description（自我介绍）<br>请注意，该接口为模拟接口，并不会对数据进行存储</li>
+</ul>
+<h2 id="4-设备展示（150分）"><a href="#4-设备展示（150分）" class="headerlink" title="4. 设备展示（150分）"></a>4. 设备展示（150分）</h2><h3 id="背景-3"><a href="#背景-3" class="headerlink" title="背景"></a>背景</h3><p>设备是烛光文化的核心，烛光希望你能将6套设备放在主要位置进行介绍。</p>
+<h3 id="题目要求-3"><a href="#题目要求-3" class="headerlink" title="题目要求"></a>题目要求</h3><p>本题你将依据文件“设备展示”，使用合适的组件，将6个设备的图片与内容完整、美观得展示出来，且不占用过多的页面空间；使用诸如“隐藏-展开”、“抽屉”、“滑块”、“悬停”等的功能会使设备展示更加有序。</p>
+<h2 id="5-设备租赁（250分）"><a href="#5-设备租赁（250分）" class="headerlink" title="5. 设备租赁（250分）"></a>5. 设备租赁（250分）</h2><h3 id="背景-4"><a href="#背景-4" class="headerlink" title="背景"></a>背景</h3><p>由于设备繁多，业务繁忙，烛光希望你能帮助他们在线上完成设备的租赁。</p>
+<h3 id="题目要求-4"><a href="#题目要求-4" class="headerlink" title="题目要求"></a>题目要求</h3><ul>
+<li>本题你将开发一组表单，让用户选择设备名称，填写数量、租赁起始日期、租赁结束日期，使用接口 <a href="http://batswan.design:9000/check" target="_blank" rel="noopener">http://batswan.design:9000/check</a> 检查设备是否有余量可以租用。本题可以配合第4题的界面设计。</li>
+<li>若设备没有余量，不能进行租赁，并向用户进行反馈；</li>
+<li>若设备有余量，则将接口返回的租金显示给用户，并复用之前的设备、数量和开始结束日期表单，让用户继续填写姓名、学号、学院、电话，使用接口 <a href=""></a><a href="http://batswan.design:9000/apply">http://batswan.design:9000/apply</a> 提交租赁申请。</li>
+</ul>
+<h3 id="接口请求规则-1"><a href="#接口请求规则-1" class="headerlink" title="接口请求规则"></a>接口请求规则</h3><p>/check接口请求规则：</p>
+<ul>
+<li>请求方式：    GET</li>
+<li>参数4个：     equipment（设备），amount（数量），start（开始日期                                yyyy-MM-dd），end（结束日期yyyy-MM-dd）</li>
+<li>请注意，该接口为模拟接口，返回信息中的租金固定为50元；所有产品均有余量。</li>
+</ul>
+<p>/apply接口请求规则：</p>
+<ul>
+<li>请求方式：    POST</li>
+<li>数据格式：    JSON</li>
+<li>参数8个：    equipment（设备），amount（数量），start（租赁开始日期yyyy-MM-dd），end（租赁结束日期yyyy-MM-dd） name（姓名），department（学院），id（学号），phone（电话）</li>
+</ul>
+<h2 id="6-管理员界面（250分）"><a href="#6-管理员界面（250分）" class="headerlink" title="6. 管理员界面（250分）"></a>6. 管理员界面（250分）</h2><h3 id="背景-5"><a href="#背景-5" class="headerlink" title="背景"></a>背景</h3><p>烛光文化的工作人员们需要随时查看设备租赁申请和入职申请，当然，这些内容是公司的内部信息，不可以对外展示。</p>
+<h3 id="题目要求-5"><a href="#题目要求-5" class="headerlink" title="题目要求"></a>题目要求</h3><ul>
+<li>本题你将首先使用<a href="http://batswan.design:9000/login" target="_blank" rel="noopener">http://batswan.design:9000/login</a> 验证用户输入的口令。</li>
+<li>如果口令输入正确，则跳转到新的管理员页面。<br>在这里，你将使用接口<a href="http://batswan.design:9000/join_show" target="_blank" rel="noopener">http://batswan.design:9000/join_show</a> 和 <a href="http://batswan.design:9000/apply_show" target="_blank" rel="noopener">http://batswan.design:9000/apply_show</a> 两个接口展示所有的入职申请和租赁申请。“卡片”和“向下滚动”是很好的展示方式，当然你也可以有自己的设计创意。</li>
+</ul>
+<h3 id="接口请求规则-2"><a href="#接口请求规则-2" class="headerlink" title="接口请求规则"></a>接口请求规则</h3><p>/login 接口请求规则：</p>
+<ul>
+<li>请求方式：    GET</li>
+<li>参数1个：    password    （口令内容）<br>默认正确的口令为：2020CUMT 和 2020BatSwanStudio</li>
+</ul>
+<h1 id="作品展示"><a href="#作品展示" class="headerlink" title="作品展示"></a>作品展示</h1><h2 id="Home页"><a href="#Home页" class="headerlink" title="Home页"></a>Home页</h2><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/QQ20200524142650.gif" alt=""></p>
+<h2 id="租赁页"><a href="#租赁页" class="headerlink" title="租赁页"></a>租赁页</h2><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200524140254.gif" alt=""></p>
+<h2 id="公司资料页"><a href="#公司资料页" class="headerlink" title="公司资料页"></a>公司资料页</h2><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200524140854.gif" alt=""></p>
+<h2 id="发现页"><a href="#发现页" class="headerlink" title="发现页"></a>发现页</h2><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200524142916.jpg" alt=""></p>
+<h2 id="管理员登录"><a href="#管理员登录" class="headerlink" title="管理员登录"></a>管理员登录</h2><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200524141726.gif" alt=""></p>
+<h2 id="申请页"><a href="#申请页" class="headerlink" title="申请页"></a>申请页</h2><p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200524142131.gif" alt=""></p>
+<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><h2 id="仓库地址"><a href="#仓库地址" class="headerlink" title="仓库地址"></a>仓库地址</h2><p><a href="https://github.com/cnatom/ZhuGuang" target="_blank" rel="noopener">https://github.com/cnatom/ZhuGuang</a></p>
+<h2 id="代码说明"><a href="#代码说明" class="headerlink" title="代码说明"></a>代码说明</h2><ol>
+<li><p>公司资料：lib/about.dart </p>
+</li>
+<li><p>轮播图：lib/home.dart<br>使用了flutter_swiper: 1.0.6 依赖组件<br>通过dio: 3.0.8 进行网络访问</p>
+</li>
+<li><p>加入我们：lib/join.dart<br>通过dio进行post请求<br>使用了FLUI库的加载效果，在post成功后取消加载动画</p>
+</li>
+<li><p>设备展示：lib/home.dart （放在了轮播图的下面）<br>使用了ExpansionTile抽屉组件<br>图片资源文件：images/xxx.png</p>
+</li>
+<li><p>设备租赁：lib/lease.dart<br>使用了Offstage对下方表格进行临时隐藏<br>使用了showDatePicker打开一个时间选择器<br>通过dio进行post请求。</p>
+</li>
+<li><p>管理员界面：lib/admin.dart 与 lib/admin_page.dart<br>使用了FLUI库的加载效果<br>在点击登录之后，会判断口令然后进行post操作。<br>登录后会由admin.dart跳转到admin_page.dart页面<br>admin_page.dart页面复用了主页的抽屉设计。</p>
+</li>
+<li><p>有关网络请求：json解析出的dart类都位于model目录里面<br>由JsonToDart生成这些类。</p>
+</li>
+</ol>
 
       </div>
       
@@ -391,10 +440,10 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-28T00:31:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-24T14:32:22+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月28日</p>
+    <p>更新于 2020年5月24日</p>
   </a>
 </div>
 
@@ -403,7 +452,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/flutter/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>flutter</p></a></div>
 
 
         
@@ -416,7 +465,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2019/12/03/P1308-%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/&title=P1308 统计单词数——字符串处理 | 阿腾木的小世界&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/05/24/%E9%BB%91%E5%A4%A9%E9%B9%85%E6%9D%AF2020%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%91%E6%88%98%E8%B5%9B%E4%BD%9C%E5%93%81/&title=黑天鹅杯2020开发者挑战赛项目总结 | 阿腾木的小世界&summary="
           
           >
           
@@ -428,7 +477,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2019/12/03/P1308-%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/&title=P1308 统计单词数——字符串处理 | 阿腾木的小世界&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/05/24/%E9%BB%91%E5%A4%A9%E9%B9%85%E6%9D%AF2020%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%91%E6%88%98%E8%B5%9B%E4%BD%9C%E5%93%81/&title=黑天鹅杯2020开发者挑战赛项目总结 | 阿腾木的小世界&summary="
           
           >
           
@@ -440,7 +489,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2019/12/03/P1308-%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/&title=P1308 统计单词数——字符串处理 | 阿腾木的小世界&summary="
+          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/05/24/%E9%BB%91%E5%A4%A9%E9%B9%85%E6%9D%AF2020%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%91%E6%88%98%E8%B5%9B%E4%BD%9C%E5%93%81/&title=黑天鹅杯2020开发者挑战赛项目总结 | 阿腾木的小世界&summary="
           
           >
           
@@ -464,40 +513,21 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2019/12/03/P1553-%E6%95%B0%E5%AD%97%E5%8F%8D%E8%BD%AC%EF%BC%88%E5%8D%87%E7%BA%A7%E7%89%88%EF%BC%89%E2%80%94%E2%80%94%E8%A2%AB%E8%87%AA%E5%B7%B1%E8%A0%A2%E5%93%AD%E4%BA%86%E7%B3%BB%E5%88%97/" rel="prev" title="P1553 数字反转（升级版）——被自己蠢哭了系列">
-                                
-                                    P1553 数字反转（升级版）——被自己蠢哭了系列
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/%E7%AE%97%E6%B3%95/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2019/11/30/%E3%80%90C-%E3%80%91%E7%AC%AC13%E7%AB%A0%E4%BD%9C%E4%B8%9A/" rel="prev" title="【C++】第13章作业">
+                              <a href="/2020/05/17/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E5%9B%9E%E6%96%87%E6%95%B0%E4%B8%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" rel="prev" title="【数据结构】回文数与进制转换">
                                   
-                                      【C++】第13章作业
+                                      【数据结构】回文数与进制转换
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> C++</a>
+                                  <a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a>
                               </h6>
                           
                       </span>
@@ -541,7 +571,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
 
   <script>
     window.subData = {
-      title: 'P1308 统计单词数——字符串处理',
+      title: '黑天鹅杯2020开发者挑战赛项目总结',
       tools: true
     }
   </script>
@@ -640,7 +670,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例1"><span class="toc-text">输入样例1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例1"><span class="toc-text">输出样例1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例2"><span class="toc-text">输入样例2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例2"><span class="toc-text">输出样例2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#我的解法"><span class="toc-text">我的解法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用string的做法（作者-Aimyhtixela来自洛谷）"><span class="toc-text">用string的做法（作者: Aimyhtixela来自洛谷）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特别注意"><span class="toc-text">特别注意</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#赛题"><span class="toc-text">赛题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-公司资料-100分"><span class="toc-text">1. 公司资料(100分)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目要求"><span class="toc-text">题目要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-轮播图（100分）"><span class="toc-text">2. 轮播图（100分）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景-1"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目要求-1"><span class="toc-text">题目要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-加入我们（150分）"><span class="toc-text">3. 加入我们（150分）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景-2"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目要求-2"><span class="toc-text">题目要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口请求规则"><span class="toc-text">接口请求规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-设备展示（150分）"><span class="toc-text">4. 设备展示（150分）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景-3"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目要求-3"><span class="toc-text">题目要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-设备租赁（250分）"><span class="toc-text">5. 设备租赁（250分）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景-4"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目要求-4"><span class="toc-text">题目要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口请求规则-1"><span class="toc-text">接口请求规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-管理员界面（250分）"><span class="toc-text">6. 管理员界面（250分）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景-5"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目要求-5"><span class="toc-text">题目要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口请求规则-2"><span class="toc-text">接口请求规则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作品展示"><span class="toc-text">作品展示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Home页"><span class="toc-text">Home页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#租赁页"><span class="toc-text">租赁页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公司资料页"><span class="toc-text">公司资料页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发现页"><span class="toc-text">发现页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#管理员登录"><span class="toc-text">管理员登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#申请页"><span class="toc-text">申请页</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#源代码"><span class="toc-text">源代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#仓库地址"><span class="toc-text">仓库地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码说明"><span class="toc-text">代码说明</span></a></li></ol></li></ol>
     </div>
   </section>
 
