@@ -325,14 +325,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>604字</p>
+        <p>1.1k字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>2分</p>
+        <p>4分</p>
       </a>
     </div>
   
@@ -345,10 +345,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-17T22:15:35+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-18T18:41:07+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年6月17日</p>
+    <p>更新于 2020年6月18日</p>
   </a>
 </div>
 
@@ -403,7 +403,49 @@
 <blockquote>
 <p>每个<code>Intent</code>中只能有一个<code>action</code>，但能指定多个<code>category</code>。<br>如果不指定<code>category</code>，则<code>startActivity()方法</code>会自动将<code>android.intent.category.DEFAULT</code>添加到Intent中</p>
 </blockquote>
-
+<h2 id="跳转到其他程序的Activity"><a href="#跳转到其他程序的Activity" class="headerlink" title="跳转到其他程序的Activity"></a>跳转到其他程序的Activity</h2><p>以跳转到浏览器为例</p>
+<p>只需要修改<code>FirstActivity</code>中按钮点击事件的代码：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">button.setOnClickListener&#123;</span><br><span class="line">    <span class="comment">//首先指定intent的action是Intent.ACTION_VIEW</span></span><br><span class="line">    <span class="keyword">val</span> intent = Intent(Intent.ACTION_VIEW)</span><br><span class="line">    <span class="comment">//然后通过Uri.parse方法将字符串解析为Uri对象，并传递到Intent的data中</span></span><br><span class="line">    intent.<span class="keyword">data</span> = Uri.parse(<span class="string">"https://www.baidu.com"</span>)<span class="comment">//实际上调用了Intent的setData()方法</span></span><br><span class="line">    startActivity(intent)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样的话就可以实现点击按钮后自动跳转到浏览器并显示百度官网了。</p>
+<blockquote>
+<p><code>Intent.ACTION_VIEW</code>的常量值为<code>android.intent.action.VIEW</code></p>
+</blockquote>
+<p>同时，我们还可以在<code>&lt;intent-filter&gt;</code>标签中再配置一个<code>&lt;data&gt;</code>标签，用于更精确的指定当前Activity能够响应的数据。<code>&lt;data&gt;</code>标签中主要可以配置以下内容：</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>android:scheme</td>
+<td>用于指定数据的协议部分，如上述https</td>
+</tr>
+<tr>
+<td>android:host</td>
+<td>指定数据的主机名部分，如<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></td>
+</tr>
+<tr>
+<td>android:port</td>
+<td>用于指定端口部分</td>
+</tr>
+<tr>
+<td>android:path</td>
+<td>用于指定端口后面的部分</td>
+</tr>
+<tr>
+<td>android:mimeType</td>
+<td>指定可以处理的数据类型</td>
+</tr>
+</tbody></table>
+<p>比如让<code>SecondActivity</code>能够精准响应<code>https</code>的数据<br>只需要修改其布局文件<code>second_layout.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">".SecondActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:label</span>=<span class="string">"Second_Activity"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">intent-filter</span> <span class="attr">tools:ignore</span>=<span class="string">"AppLinkUrlError"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 指定所要响应的action内容 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.VIEW"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 使Activity精准响应https的内容 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:scheme</span>=<span class="string">"https"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>只有<code>action</code>和<code>data</code>内容都匹配才能实现跳转。<br>这里如果将<code>android:scheme=&quot;https&quot;</code>改为<code>android:scheme=&quot;http&quot;</code>，那么将无法响应。</p>
+</blockquote>
+<p>除了<code>https</code>协议外，我们还可以指定其他的协议，比如<code>geo</code>表示显示地理位置、<code>tel</code>表示拨打电话。<br>下面的代码展示了如何在程序中调用系统拨号界面：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">button.setOnClickListener&#123;</span><br><span class="line">    <span class="keyword">val</span> intent = Intent(Intent.ACTION_DIAL)</span><br><span class="line">    intent.<span class="keyword">data</span> = Uri.parse(<span class="string">"tel:10086"</span>)</span><br><span class="line">    startActivity(intent)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       </div>
       
       
@@ -415,10 +457,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-17T22:15:35+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-18T18:41:07+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年6月17日</p>
+    <p>更新于 2020年6月18日</p>
   </a>
 </div>
 
@@ -653,7 +695,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现目标"><span class="toc-text">实现目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现效果"><span class="toc-text">实现效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1：使用显式Intent"><span class="toc-text">方法1：使用显式Intent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码说明"><span class="toc-text">代码说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法2：使用隐式Intent"><span class="toc-text">方法2：使用隐式Intent</span></a>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现目标"><span class="toc-text">实现目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现效果"><span class="toc-text">实现效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1：使用显式Intent"><span class="toc-text">方法1：使用显式Intent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码说明"><span class="toc-text">代码说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法2：使用隐式Intent"><span class="toc-text">方法2：使用隐式Intent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跳转到其他程序的Activity"><span class="toc-text">跳转到其他程序的Activity</span></a>
     </div>
   </section>
 
