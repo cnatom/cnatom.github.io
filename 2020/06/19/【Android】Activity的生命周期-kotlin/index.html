@@ -6,7 +6,7 @@
   <meta name="google-site-verification" content="zNu2MM0qAdwd9Lbu6bBXPNa19fMK_9sfkuMZam6u7Dc" />
   <meta name="baidu-site-verification" content="dtMz3Rjl4v" />
   
-  <title>P1308 统计单词数——字符串处理 | 阿腾木的小世界</title>
+  <title>【Android】Activity的生命周期-kotlin | 阿腾木的小世界</title>
   
   
 
@@ -249,8 +249,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/12/03/P1308-%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
-        P1308 统计单词数——字符串处理
+      <a href="/2020/06/19/%E3%80%90Android%E3%80%91Activity%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-kotlin/">
+        【Android】Activity的生命周期-kotlin
       </a>
     </h1>
   
@@ -281,7 +281,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-12-03</p>
+    <p>2020-06-19</p>
   </a>
 </div>
 
@@ -291,9 +291,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E8%90%8C%E6%96%B0%E8%87%AA%E5%BC%BA%E4%B9%8B%E8%B7%AF/' rel="nofollow">
+    <a href='/categories/Android/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>萌新自强之路</p>
+      <p>Android</p>
     </a>
   </div>
 
@@ -325,14 +325,14 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>1.1k字</p>
+        <p>529字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
       <a class='notlink'>
         <i class="fas fa-hourglass-half" aria-hidden="true"></i>
         <p>阅读时长≈</p>
-        <p>4分</p>
+        <p>2分</p>
       </a>
     </div>
   
@@ -345,10 +345,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-28T00:31:11+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-19T19:32:03+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月28日</p>
+    <p>更新于 2020年6月19日</p>
   </a>
 </div>
 
@@ -364,21 +364,85 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，有的还能统计出特定单词在文章中出现的次数。<br>现在，请你编程实现这一功能，具体要求是：给定一个单词，请你输出它在给定的文章中出现的次数和第一次出现的位置。注意：匹配单词时，不区分大小写，但要求完全匹配，即给定单词必须与文章中的某一独立单词在不区分大小写的情况下完全相同（参见样例1 ），如果给定单词仅是文章中某一单词的一部分则不算匹配（参见样例2 ）。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>共2行。</p>
-<p>第1行为一个字符串，其中只含字母，表示给定单词；</p>
-<p>第2行为一个字符串，其中只可能包含字母和空格，表示给定的文章。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>一行，如果在文章中找到给定单词则输出两个整数，两个整数之间用一个空格隔开，分别是单词在文章中出现的次数和第一次出现的位置（即在文章中第一次出现时，单词首字母在文章中的位置，位置从0 开始）；如果单词在文章中没有出现，则直接输出一个整数-1。</p>
-<h3 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a>输入样例1</h3><pre><code>To
-to be or not to be is a question</code></pre><h3 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a>输出样例1</h3><pre><code>2 0</code></pre><h3 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2"></a>输入样例2</h3><pre><code>to
-Did the Ottoman Empire lose its power at that time</code></pre><h3 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2"></a>输出样例2</h3><pre><code>to
-Did the Ottoman Empire lose its power at that time</code></pre><hr>
-<h4 id="我的解法"><a href="#我的解法" class="headerlink" title="我的解法"></a>我的解法</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">strlower</span><span class="params">(<span class="keyword">char</span>* a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//将字符串转换为小写 </span></span><br><span class="line">	<span class="comment">//头文件cstring:判断大小写isupper 临时转换为小写tolower </span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; a[i]; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">isupper</span>(a[i])) a[i] = <span class="built_in">tolower</span>(a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">match</span><span class="params">(<span class="keyword">char</span>* aa, <span class="keyword">char</span>* bb,<span class="keyword">int</span>* ii)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,flag=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="built_in">strlen</span>(aa);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(aa[i]!=bb[i])</span><br><span class="line">		&#123;<span class="comment">//中间有不匹配的</span></span><br><span class="line">			*ii += i; </span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(bb[len]==<span class="string">' '</span>||bb[len]==<span class="string">'\0'</span>)</span><br><span class="line">	&#123;<span class="comment">//匹配到a的结尾，且b[i+1]空格</span></span><br><span class="line">		*ii+=i;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123;<span class="comment">//匹配到单词的结尾，但是文章b[i+1]不是空格</span></span><br><span class="line">		(*ii)++;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">11</span>];</span><br><span class="line">	<span class="keyword">char</span> g[<span class="number">1000001</span>];</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>, location = <span class="number">-1</span>;</span><br><span class="line">	<span class="comment">//用gets函数读取整行 </span></span><br><span class="line">	gets(a);</span><br><span class="line">	gets(g);</span><br><span class="line">	<span class="keyword">int</span> len = <span class="built_in">strlen</span>(g);</span><br><span class="line">	<span class="comment">//将大写转换为小写 </span></span><br><span class="line">	strlower(a);</span><br><span class="line">	strlower(g);</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=len)</span><br><span class="line">	&#123;<span class="comment">//从i=0开始向后遍历文章 </span></span><br><span class="line">		<span class="keyword">if</span> (g[i] == a[<span class="number">0</span>]&amp;&amp;g[i<span class="number">-1</span>]==<span class="string">' '</span> || g[i]==a[<span class="number">0</span>]&amp;&amp;i==<span class="number">0</span>)  </span><br><span class="line">		&#123;<span class="comment">//当 文章空格后的第一个单词 与 给定单词首字母 相同时</span></span><br><span class="line">		 <span class="comment">//或者 文章的第一个单词 与 给定单词首字母 相同时</span></span><br><span class="line">			<span class="keyword">if</span> (match(a, g + i,&amp;i))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(location==<span class="number">-1</span>)location = i-<span class="built_in">strlen</span>(a);</span><br><span class="line">				num++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(location==<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">"-1"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d %d"</span>,num,location);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="用string的做法（作者-Aimyhtixela来自洛谷）"><a href="#用string的做法（作者-Aimyhtixela来自洛谷）" class="headerlink" title="用string的做法（作者: Aimyhtixela来自洛谷）"></a>用string的做法（作者: Aimyhtixela来自洛谷）</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义头文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="comment">//命名空间</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//定义两个字符串</span></span><br><span class="line">    <span class="built_in">string</span> a;</span><br><span class="line">    <span class="built_in">string</span> b;</span><br><span class="line">    <span class="comment">//用string库，调用getline, 直接读入一整行</span></span><br><span class="line">    getline(<span class="built_in">cin</span>,a);</span><br><span class="line">    getline(<span class="built_in">cin</span>,b);</span><br><span class="line">    <span class="comment">//转换大小写，可以都转换为大写，或者小写</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length();++i)&#123;</span><br><span class="line">        a[i]=<span class="built_in">tolower</span>(a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;b.length();++i)&#123;</span><br><span class="line">        b[i]=<span class="built_in">tolower</span>(b[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//因为连起来的不算，所以要在前后加几个空格，一定要是同样多的，同量减同量，等于同量</span></span><br><span class="line">    a=<span class="string">' '</span>+a+<span class="string">' '</span>;</span><br><span class="line">    b=<span class="string">' '</span>+b+<span class="string">' '</span>;</span><br><span class="line">    <span class="comment">//先看看会不会找不到，用a.find()和string::npos</span></span><br><span class="line">    <span class="keyword">if</span> (b.find(a)==<span class="built_in">string</span>::npos)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果找得到</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> alpha=b.find(a);</span><br><span class="line">        <span class="keyword">int</span> beta=b.find(a),s=<span class="number">0</span>;<span class="comment">//计数器初始化为0</span></span><br><span class="line">        <span class="keyword">while</span> (beta!=<span class="built_in">string</span>::npos)&#123;</span><br><span class="line">            ++s;<span class="comment">//计数器</span></span><br><span class="line">            beta=b.find(a,beta+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="string">" "</span>&lt;&lt;alpha&lt;&lt;<span class="built_in">endl</span>;<span class="comment">//输出第一个和总共有几个</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//函数返回值为0，结束整个程序</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h3><p><em>i++与(</em>i)++的区别，要注意++的优先级要高于取值运算符</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span>* ii)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	(*ii)++; <span class="comment">//实参i也+1</span></span><br><span class="line">	*ii++; <span class="comment">//等同于先ii++，将指针后移，然后再取值，实参i不变</span></span><br><span class="line">&#125;</span><br><span class="line">.....</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">fun(i);</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+        <h3 id="各种回调方法"><a href="#各种回调方法" class="headerlink" title="各种回调方法"></a>各种回调方法</h3><table>
+<thead>
+<tr>
+<th>回调方法</th>
+<th>调用期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onCreate()</td>
+<td>在Activity第一次被创建时调用</td>
+</tr>
+<tr>
+<td>onStart()</td>
+<td>在Activity有不可见变为可见时调用</td>
+</tr>
+<tr>
+<td>onResume()</td>
+<td>当Activity位于栈顶并准备好进行交互时调用</td>
+</tr>
+<tr>
+<td>onPause()</td>
+<td>在启动或恢复另一个Activity时被调用</td>
+</tr>
+<tr>
+<td>onStop()</td>
+<td>在onPause()之后，在Activity完全不可见时调用。Dialog不会触发此回调。</td>
+</tr>
+<tr>
+<td>onDestroy()</td>
+<td>在Activity被销毁之前调用,调用后就销毁Activity</td>
+</tr>
+<tr>
+<td>onRestart()</td>
+<td>Activity由停止变为运行之前调用</td>
+</tr>
+</tbody></table>
+<p>比如说我们有三个<code>Activity</code>，</p>
+<p><code>MainActivity</code>是主界面，有两个按钮，用来跳转到<code>DialogActivity</code>或<code>NormalActivity</code><br><code>DialogActivity</code>是一个对话框主题的<code>Activity</code><br><code>NormalActivity</code>就是一个平平无奇的<code>Activity</code></p>
+<p>图示如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/2020061919000.png" alt=""></p>
+<p><strong>先上结论</strong>  ：</p>
+<p>(按执行顺序排序，以MainActivity内的回调方法为例)</p>
+<ul>
+<li>启动MainActivity时<ul>
+<li>onCreate()</li>
+<li>onStart()</li>
+<li>onResume()</li>
+</ul>
+</li>
+<li>MainActivity -&gt; NormalActivity<ul>
+<li>onPause()</li>
+<li>onStop()</li>
+</ul>
+</li>
+<li>返回MainActivity<ul>
+<li>onRestart()</li>
+<li>onStart()</li>
+<li>onResume()</li>
+</ul>
+</li>
+<li>MainActivity -&gt; DialogActivity<ul>
+<li>onPause()</li>
+</ul>
+</li>
+<li>返回MainActivity<ul>
+<li>onResume()</li>
+</ul>
+</li>
+</ul>
+<p>再用实例<strong>论证</strong>一下上述结论</p>
+<p>为<code>MainActivity</code>创建两个按钮，修改其布局文件：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:ignore</span>=<span class="string">"MissingConstraints"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/normalButton"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/start_normalactivity"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">tools:ignore</span>=<span class="string">"MissingConstraints"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/dialogButton"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/start_dialogactivity"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">tools:ignore</span>=<span class="string">"MissingConstraints"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>再为这两个按钮添加跳转功能</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dialogButton.setOnClickListener&#123;</span><br><span class="line">    <span class="keyword">val</span> intent = Intent(<span class="keyword">this</span>,DialogActivity::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>)</span></span><br><span class="line">    startActivity(intent)</span><br><span class="line">&#125;</span><br><span class="line">normalButton.setOnClickListener&#123;</span><br><span class="line">    <span class="keyword">val</span> intent = Intent(<span class="keyword">this</span>,NormalActivity::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>)</span></span><br><span class="line">    startActivity(intent)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>DialogActivity</code>和<code>NormalActivity</code>现在还都是Empty Activity。<br>因此，修改<code>DialogActivity</code>的主题配置，用于区分两者。<br>修改项目的配置文件<code>AndroidManifest.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">".DialogActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:theme</span>=<span class="string">"@style/Theme.AppCompat.Dialog"</span> /&gt;</span><span class="comment">&lt;!--指定Activity主题为Dialog--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".NormalActivity"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>最后，为了能够在<code>Logcat</code>中看到回调信息，我们需要重写文章开头列举的几个方法<br>修改<code>MainActivity</code></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">val</span> tag = <span class="string">"MainActivity"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onStart</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onStart()</span><br><span class="line">    Log.d(tag,<span class="string">"onStart"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onResume</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onResume()</span><br><span class="line">    Log.d(tag,<span class="string">"onResume"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onPause</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onPause()</span><br><span class="line">    Log.d(tag,<span class="string">"onPause"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onStop</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onStop()</span><br><span class="line">    Log.d(tag,<span class="string">"onStop"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDestroy</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onDestroy()</span><br><span class="line">    Log.d(tag,<span class="string">"onDestroy"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onRestart</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.onRestart()</span><br><span class="line">    Log.d(tag,<span class="string">"onRestart"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大功告成！<br>在<code>Logcat</code>中就可以查看打印信息了<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200619192623.png" alt=""></p>
 
       </div>
       
@@ -391,10 +455,10 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-28T00:31:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-19T19:32:03+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月28日</p>
+    <p>更新于 2020年6月19日</p>
   </a>
 </div>
 
@@ -403,7 +467,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>算法</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Android/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Android</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Kotlin/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Kotlin</p></a></div>
 
 
         
@@ -416,7 +480,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2019/12/03/P1308-%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/&title=P1308 统计单词数——字符串处理 | 阿腾木的小世界&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/06/19/%E3%80%90Android%E3%80%91Activity%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-kotlin/&title=【Android】Activity的生命周期-kotlin | 阿腾木的小世界&summary="
           
           >
           
@@ -428,7 +492,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2019/12/03/P1308-%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/&title=P1308 统计单词数——字符串处理 | 阿腾木的小世界&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/06/19/%E3%80%90Android%E3%80%91Activity%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-kotlin/&title=【Android】Activity的生命周期-kotlin | 阿腾木的小世界&summary="
           
           >
           
@@ -440,7 +504,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2019/12/03/P1308-%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/&title=P1308 统计单词数——字符串处理 | 阿腾木的小世界&summary="
+          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/06/19/%E3%80%90Android%E3%80%91Activity%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-kotlin/&title=【Android】Activity的生命周期-kotlin | 阿腾木的小世界&summary="
           
           >
           
@@ -464,40 +528,21 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2019/12/03/P1553-%E6%95%B0%E5%AD%97%E5%8F%8D%E8%BD%AC%EF%BC%88%E5%8D%87%E7%BA%A7%E7%89%88%EF%BC%89%E2%80%94%E2%80%94%E8%A2%AB%E8%87%AA%E5%B7%B1%E8%A0%A2%E5%93%AD%E4%BA%86%E7%B3%BB%E5%88%97/" rel="prev" title="P1553 数字反转（升级版）——被自己蠢哭了系列">
-                                
-                                    P1553 数字反转（升级版）——被自己蠢哭了系列
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/%E7%AE%97%E6%B3%95/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 算法</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2019/11/30/%E3%80%90C-%E3%80%91%E7%AC%AC13%E7%AB%A0%E4%BD%9C%E4%B8%9A/" rel="prev" title="【C++】第13章作业">
+                              <a href="/2020/06/18/%E3%80%90Android%E3%80%91Activity%E9%97%B4%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BC%A0%E8%BE%93-kotlin/" rel="prev" title="Activity间数据的传输-kotlin">
                                   
-                                      【C++】第13章作业
+                                      Activity间数据的传输-kotlin
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> C++</a>
+                                  <a class="tag" href="/tags/Android/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Android</a> <a class="tag" href="/tags/Kotlin/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Kotlin</a>
                               </h6>
                           
                       </span>
@@ -541,7 +586,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
 
   <script>
     window.subData = {
-      title: 'P1308 统计单词数——字符串处理',
+      title: '【Android】Activity的生命周期-kotlin',
       tools: true
     }
   </script>
@@ -642,7 +687,7 @@ Did the Ottoman Empire lose its power at that time</code></pre><hr>
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例1"><span class="toc-text">输入样例1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例1"><span class="toc-text">输出样例1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例2"><span class="toc-text">输入样例2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例2"><span class="toc-text">输出样例2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#我的解法"><span class="toc-text">我的解法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用string的做法（作者-Aimyhtixela来自洛谷）"><span class="toc-text">用string的做法（作者: Aimyhtixela来自洛谷）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特别注意"><span class="toc-text">特别注意</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#各种回调方法"><span class="toc-text">各种回调方法</span></a></li></ol>
     </div>
   </section>
 
