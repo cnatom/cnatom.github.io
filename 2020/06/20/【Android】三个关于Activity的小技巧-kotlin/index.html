@@ -6,7 +6,7 @@
   <meta name="google-site-verification" content="zNu2MM0qAdwd9Lbu6bBXPNa19fMK_9sfkuMZam6u7Dc" />
   <meta name="baidu-site-verification" content="dtMz3Rjl4v" />
   
-  <title>【Python爬虫】定向爬取大学排名 | 阿腾木的小世界</title>
+  <title>三个关于Activity的小技巧-kotlin | 阿腾木的小世界</title>
   
   
 
@@ -249,8 +249,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91%E5%AE%9A%E5%90%91%E7%88%AC%E5%8F%96%E5%A4%A7%E5%AD%A6%E6%8E%92%E5%90%8D/">
-        【Python爬虫】定向爬取大学排名
+      <a href="/2020/06/20/%E3%80%90Android%E3%80%91%E4%B8%89%E4%B8%AA%E5%85%B3%E4%BA%8EActivity%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-kotlin/">
+        三个关于Activity的小技巧-kotlin
       </a>
     </h1>
   
@@ -281,7 +281,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-05-03</p>
+    <p>2020-06-20</p>
   </a>
 </div>
 
@@ -291,9 +291,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/Python%E7%88%AC%E8%99%AB/' rel="nofollow">
+    <a href='/categories/Android/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Python爬虫</p>
+      <p>Android</p>
     </a>
   </div>
 
@@ -325,7 +325,7 @@
       <a class='notlink'>
         <i class="fas fa-keyboard" aria-hidden="true"></i>
         <p>字数统计:</p>
-        <p>554字</p>
+        <p>579字</p>
       </a>
     </div>
     <div class="new-meta-item readtime">
@@ -345,10 +345,10 @@
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-03T17:12:16+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-20T14:48:21+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年5月3日</p>
+    <p>更新于 2020年6月20日</p>
   </a>
 </div>
 
@@ -364,40 +364,27 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>MOOC课程学习笔记<br>课程链接：<a href="https://www.bilibili.com/video/BV1ME411E7jE?p=1" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1ME411E7jE?p=1</a></p>
-<a id="more"></a>
+        <h3 id="根据当前界面判断是哪一个Activity"><a href="#根据当前界面判断是哪一个Activity" class="headerlink" title="根据当前界面判断是哪一个Activity"></a>根据当前界面判断是哪一个Activity</h3><p>比如说我们有两个界面：<code>FirstActivity</code>和<code>SecondActivity</code><br>默认情况下这两个类继承于<code>AppCompatActivity</code>父类</p>
+<p>要想实现这个功能，我们只需要再创建一个普通的类<code>BaseActivity</code>用来打印当前实例的类名<br>然后实现下图的继承关系：<br><img src="https://cdn.jsdelivr.net/gh/cnatom/images/images/20200620140545.png" alt=""></p>
+<p><strong>具体实现：</strong></p>
+<p>重写<code>BaseActivity</code>的<code>onCreate()</code>方法：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为了使BaseActivity可以被继承，需要在类名前加上open关键字</span></span><br><span class="line"><span class="keyword">open</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        <span class="comment">//打印当前Activity的类名</span></span><br><span class="line">        Log.d(<span class="string">"BaseActivity"</span>,javaClass.simpleName)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>javaClass</code>表示获取当前实例的<code>Class</code>对象，<code>javaClass.simpleName</code>表示获取当前实例的类名</p>
+</blockquote>
+<p>然后让<code>BaseActivity</code>成为<code>FirstActivity</code>和<code>SecondActivity</code>的父类</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FirstActivity</span> : <span class="type">BaseActivity</span></span>() &#123;</span><br><span class="line">    <span class="comment">//.............</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="包含的库"><a href="#包含的库" class="headerlink" title="包含的库"></a>包含的库</h2><table>
-<thead>
-<tr>
-<th>库</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>re</td>
-<td>正则表达式</td>
-</tr>
-<tr>
-<td>requests</td>
-<td>进行网络请求</td>
-</tr>
-<tr>
-<td>BeautifulSoup</td>
-<td>从HTML中提取数据</td>
-</tr>
-</tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> bs4</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br></pre></td></tr></table></figure>
-
-<h2 id="程序的结构设计"><a href="#程序的结构设计" class="headerlink" title="程序的结构设计"></a>程序的结构设计</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 存储大学排名信息</span></span><br><span class="line">    uinfo = []</span><br><span class="line">    <span class="comment">#目标地址</span></span><br><span class="line">    url = <span class="string">"http://www.zuihaodaxue.cn/zuihaodaxuepaiming2019.html"</span></span><br><span class="line">    <span class="comment">#从网络上获取大学排名内容</span></span><br><span class="line">    html = getHTMLText(url)</span><br><span class="line">    <span class="comment">#将网页信息存储到合适的数据结构中</span></span><br><span class="line">    fillUnivList(uinfo,html)</span><br><span class="line">    <span class="comment">#利用数据结构展示并输出内容</span></span><br><span class="line">    printUnivList(uinfo,<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="各函数的具体实现"><a href="#各函数的具体实现" class="headerlink" title="各函数的具体实现"></a>各函数的具体实现</h2><h3 id="从网络上获取大学排名内容"><a href="#从网络上获取大学排名内容" class="headerlink" title="从网络上获取大学排名内容"></a>从网络上获取大学排名内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHTMLText</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">'''获取url信息，输出url内容'''</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        r = requests.get(url)   </span><br><span class="line">        r.raise_for_status()                    <span class="comment">#如果状态不是200，引发HTTPError异常</span></span><br><span class="line">        r.encoding = r.apparent_encoding        <span class="comment">#按内容编码</span></span><br><span class="line">        <span class="keyword">return</span> r.text                           <span class="comment">#返回Response内容</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"产生异常"</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="将网页信息存储到合适的数据结构中"><a href="#将网页信息存储到合适的数据结构中" class="headerlink" title="将网页信息存储到合适的数据结构中"></a>将网页信息存储到合适的数据结构中</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fillUnivList</span><span class="params">(ulist,html)</span>:</span></span><br><span class="line">    <span class="string">'''将文章页面放在list列表中'''</span></span><br><span class="line">    soup = BeautifulSoup(html,<span class="string">"html.parser"</span>)</span><br><span class="line">    <span class="keyword">for</span> tr <span class="keyword">in</span> soup.find(<span class="string">'tbody'</span>).children:      <span class="comment">#遍历tbody标签的子节点(children迭代类型)</span></span><br><span class="line">        <span class="keyword">if</span> isinstance(tr,bs4.element.Tag):      <span class="comment">#检测tr标签是否为bs4定义的Tag类型</span></span><br><span class="line">            tds = tr(<span class="string">'td'</span>)                      <span class="comment">#tds以list形式存储td标签</span></span><br><span class="line">            ulist.append([tds[<span class="number">0</span>].string,tds[<span class="number">1</span>].string,tds[<span class="number">2</span>].string])</span><br></pre></td></tr></table></figure>
-
-<h3 id="利用数据结构展示并输出内容"><a href="#利用数据结构展示并输出内容" class="headerlink" title="利用数据结构展示并输出内容"></a>利用数据结构展示并输出内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printUnivList</span><span class="params">(ulist,num)</span>:</span></span><br><span class="line">    <span class="string">'''打印ulist中num个信息'''</span></span><br><span class="line">    content = <span class="string">"&#123;0:^10&#125;\t&#123;1:&#123;3&#125;^10&#125;\t&#123;2:^10&#125;"</span></span><br><span class="line">    print(content.format(<span class="string">"排名"</span>,<span class="string">"学校名称"</span>,<span class="string">"总分"</span>,chr(<span class="number">12288</span>)))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</span><br><span class="line">        u = ulist[i]</span><br><span class="line">        print(content.format(u[<span class="number">0</span>],u[<span class="number">1</span>],u[<span class="number">2</span>],chr(<span class="number">12288</span>)))</span><br></pre></td></tr></table></figure>
-
-<h2 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">排名        　　　学校名称　　　        总分    </span><br><span class="line">1           　　　清华大学　　　        北京    </span><br><span class="line">2           　　　北京大学　　　        北京    </span><br><span class="line">3           　　　浙江大学　　　        浙江    </span><br><span class="line">4           　　上海交通大学　　        上海    </span><br><span class="line">5           　　　复旦大学　　　        上海    </span><br><span class="line">6           　中国科学技术大学　        安徽    </span><br><span class="line">7           　　华中科技大学　　        湖北    </span><br><span class="line">7           　　　南京大学　　　        江苏    </span><br><span class="line">9           　　　中山大学　　　        广东    </span><br><span class="line">10          　哈尔滨工业大学　　       黑龙江    </span><br><span class="line">11          　北京航空航天大学　        北京    </span><br><span class="line">12          　　　武汉大学　　　        湖北    </span><br><span class="line">13          　　　同济大学　　　        上海    </span><br><span class="line">14          　　西安交通大学　　        陕西    </span><br><span class="line">15          　　　四川大学　　　        四川    </span><br><span class="line">16          　　北京理工大学　　        北京    </span><br><span class="line">17          　　　东南大学　　　        江苏    </span><br><span class="line">18          　　　南开大学　　　        天津    </span><br><span class="line">19          　　　天津大学　　　        天津</span><br><span class="line">20          　　华南理工大学　　        广东</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SecondActivity</span> : <span class="type">BaseActivity</span></span>() &#123;</span><br><span class="line">    <span class="comment">//.............</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于在调用子类时，也会调用父类的<code>onCreate()</code>方法，所以<code>BaseActivity</code>才可以打印其子类的类名</p>
+<h3 id="随时随地退出程序"><a href="#随时随地退出程序" class="headerlink" title="随时随地退出程序"></a>随时随地退出程序</h3><p>想实现这个功能，只需要用一个专门的集合对所有的<code>Activity</code>进行管理。<br>创建一个单例类<code>ActivityCollector</code>：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">object</span> ActivityCollector &#123;</span><br><span class="line">    <span class="comment">//创建一个用来暂存Activity的集合</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> activities = ArrayList&lt;Activity&gt;()</span><br><span class="line">    <span class="comment">//将Activity实例添加到集合中</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">addActivity</span><span class="params">(activity:<span class="type">Activity</span>)</span></span>&#123;</span><br><span class="line">        activities.add(activity)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将Activity从集合中移除</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">removeActivity</span><span class="params">(activity: <span class="type">Activity</span>)</span></span>&#123;</span><br><span class="line">        activities.remove(activity)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//终止程序</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">finishAll</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(activity <span class="keyword">in</span> activities)&#123;</span><br><span class="line">            <span class="comment">//检查是否正在被销毁中</span></span><br><span class="line">            <span class="keyword">if</span>(!activity.isFinishing)&#123;</span><br><span class="line">                activity.finish()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        activities.clear()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只需在其他<code>Activity</code>中调用这个单例类即可</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FirstActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.first_layout)</span><br><span class="line">        <span class="comment">//将当前实例添加到集合中</span></span><br><span class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDestroy</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy()</span><br><span class="line">        <span class="comment">//在销毁时将当前实例从集合中删除</span></span><br><span class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    button.setOnClickListener&#123;</span><br><span class="line">        <span class="comment">//点击此按钮后即销毁程序 </span></span><br><span class="line">        ActivityCollector.finishAll()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="启动Activity的最佳方式"><a href="#启动Activity的最佳方式" class="headerlink" title="启动Activity的最佳方式"></a>启动Activity的最佳方式</h3><p>如果在项目交接时，别人不知道启动<code>SecondActivity</code>需要传递哪些数据，就需要做如下改动<br>修改<code>SecondActivity</code>中的代码：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SecondActivity</span> : <span class="type">BaseActivity</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.secomd_layout)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">actionStart</span><span class="params">(context: <span class="type">Context</span>, data1:<span class="type">String</span>,data2:<span class="type">String</span>)</span></span>&#123;</span><br><span class="line">            <span class="keyword">val</span> intent = Intent(context,SecondActivity::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>)</span></span><br><span class="line">            intent.putExtra(<span class="string">"param1"</span>,data1)</span><br><span class="line">            intent.putExtra(<span class="string">"param2"</span>,data2)</span><br><span class="line">            context.startActivities(intent)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样的话就可以简化启动<code>SecondActivity</code>的代码,还可以解决上面的问题:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button.setOnClickListener&#123;</span><br><span class="line">    SecondActivity.actionStart(<span class="keyword">this</span>,<span class="string">"data1"</span>,<span class="string">"data2"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       </div>
       
       
@@ -409,10 +396,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-03T17:12:16+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-20T14:48:21+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年5月3日</p>
+    <p>更新于 2020年6月20日</p>
   </a>
 </div>
 
@@ -421,7 +408,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%88%AC%E8%99%AB/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>爬虫</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Android/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Android</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Kotlin/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Kotlin</p></a></div>
 
 
         
@@ -434,7 +421,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91%E5%AE%9A%E5%90%91%E7%88%AC%E5%8F%96%E5%A4%A7%E5%AD%A6%E6%8E%92%E5%90%8D/&title=【Python爬虫】定向爬取大学排名 | 阿腾木的小世界&summary=MOOC课程学习笔记课程链接：https://www.bilibili.com/video/BV1ME411E7jE?p=1"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://cnatom.github.io/2020/06/20/%E3%80%90Android%E3%80%91%E4%B8%89%E4%B8%AA%E5%85%B3%E4%BA%8EActivity%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-kotlin/&title=三个关于Activity的小技巧-kotlin | 阿腾木的小世界&summary="
           
           >
           
@@ -446,7 +433,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91%E5%AE%9A%E5%90%91%E7%88%AC%E5%8F%96%E5%A4%A7%E5%AD%A6%E6%8E%92%E5%90%8D/&title=【Python爬虫】定向爬取大学排名 | 阿腾木的小世界&summary=MOOC课程学习笔记课程链接：https://www.bilibili.com/video/BV1ME411E7jE?p=1"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://cnatom.github.io/2020/06/20/%E3%80%90Android%E3%80%91%E4%B8%89%E4%B8%AA%E5%85%B3%E4%BA%8EActivity%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-kotlin/&title=三个关于Activity的小技巧-kotlin | 阿腾木的小世界&summary="
           
           >
           
@@ -458,7 +445,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91%E5%AE%9A%E5%90%91%E7%88%AC%E5%8F%96%E5%A4%A7%E5%AD%A6%E6%8E%92%E5%90%8D/&title=【Python爬虫】定向爬取大学排名 | 阿腾木的小世界&summary=MOOC课程学习笔记课程链接：https://www.bilibili.com/video/BV1ME411E7jE?p=1"
+          href="http://service.weibo.com/share/share.php?url=https://cnatom.github.io/2020/06/20/%E3%80%90Android%E3%80%91%E4%B8%89%E4%B8%AA%E5%85%B3%E4%BA%8EActivity%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7-kotlin/&title=三个关于Activity的小技巧-kotlin | 阿腾木的小世界&summary="
           
           >
           
@@ -482,40 +469,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                          <h4>
-                              <a href="/2020/05/03/%E3%80%90Python%E7%88%AC%E8%99%AB%E3%80%91HTML%E5%86%85%E5%AE%B9%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95/" rel="prev" title="【Python爬虫】HTML内容查找方法">
-                                
-                                    【Python爬虫】HTML内容查找方法
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/tags/python/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> python</a> <a class="tag" href="/tags/%E7%88%AC%E8%99%AB/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 爬虫</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/2020/04/23/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8SinglyLinkedList/" rel="prev" title="【数据结构】单向链表SinglyLinkedList">
+                              <a href="/2020/06/19/%E3%80%90Android%E3%80%91Activity%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-kotlin/" rel="prev" title="Activity的生命周期-kotlin">
                                   
-                                      【数据结构】单向链表SinglyLinkedList
+                                      Activity的生命周期-kotlin
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 数据结构</a>
+                                  <a class="tag" href="/tags/Android/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Android</a> <a class="tag" href="/tags/Kotlin/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Kotlin</a>
                               </h6>
                           
                       </span>
@@ -559,7 +527,7 @@
 
   <script>
     window.subData = {
-      title: '【Python爬虫】定向爬取大学排名',
+      title: '三个关于Activity的小技巧-kotlin',
       tools: true
     }
   </script>
@@ -660,7 +628,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#包含的库"><span class="toc-text">包含的库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序的结构设计"><span class="toc-text">程序的结构设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#各函数的具体实现"><span class="toc-text">各函数的具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#从网络上获取大学排名内容"><span class="toc-text">从网络上获取大学排名内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将网页信息存储到合适的数据结构中"><span class="toc-text">将网页信息存储到合适的数据结构中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用数据结构展示并输出内容"><span class="toc-text">利用数据结构展示并输出内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出结果"><span class="toc-text">输出结果</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#根据当前界面判断是哪一个Activity"><span class="toc-text">根据当前界面判断是哪一个Activity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#随时随地退出程序"><span class="toc-text">随时随地退出程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动Activity的最佳方式"><span class="toc-text">启动Activity的最佳方式</span></a></li></ol>
     </div>
   </section>
 
