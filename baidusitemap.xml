@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://cnatom.github.io/2020/07/22/%E3%80%90Android%E3%80%91RecyclerView-kotlin/</loc>
+    <lastmod>2020-07-22</lastmod>
+  </url>  <url>
     <loc>https://cnatom.github.io/2020/01/25/%E3%80%90Flutter%E4%B9%8B%E6%97%85%E3%80%91%E4%B8%AD%E7%9C%8B%E4%B8%8D%E4%B8%AD%E7%94%A8%E7%9A%84%E6%96%B0%E6%89%8B%E4%BD%9C/</loc>
     <lastmod>2020-07-22</lastmod>
   </url>  <url>
@@ -35,9 +38,6 @@
     <lastmod>2020-07-22</lastmod>
   </url>  <url>
     <loc>https://cnatom.github.io/2020/07/16/%E3%80%90Android%E3%80%91%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-kotlin/</loc>
-    <lastmod>2020-07-22</lastmod>
-  </url>  <url>
-    <loc>https://cnatom.github.io/2020/07/22/%E3%80%90Android%E3%80%91RecyclerView-kotlin/</loc>
     <lastmod>2020-07-22</lastmod>
   </url>  <url>
     <loc>https://cnatom.github.io/2020/06/17/%E3%80%90Android%E3%80%91Activity%E8%B7%B3%E8%BD%AC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F-kotlin/</loc>
